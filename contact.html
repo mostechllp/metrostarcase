@@ -9,67 +9,69 @@
   <style>
     /* ---- NAVBAR ---- */
 
-.hamburger {
-  display: none;
-}
-/* ---- MOBILE NAV ---- */
-@media (max-width: 900px) {
+    .hamburger {
+      display: none;
+    }
 
-  .nav-links {
-    display: flex;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: white;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 32px;
-    gap: 16px;
-    border-top: 1px solid var(--border);
-    
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: 0.3s ease;
-  }
+    /* ---- MOBILE NAV ---- */
+    @media (max-width: 900px) {
 
-  .nav-links.active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
+      .nav-links {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 32px;
+        gap: 16px;
+        border-top: 1px solid var(--border);
 
-  .nav-links li {
-    width: 100%;
-  }
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: 0.3s ease;
+      }
 
-  .nav-links a {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-  }
+      .nav-links.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
 
-  /* Hide desktop right section */
-  .nav-emergency {
-    display: none;
-  }
+      .nav-links li {
+        width: 100%;
+      }
 
-  /* Show hamburger */
-  .hamburger {
-    display: flex !important;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-  }
+      .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+      }
 
-  .hamburger span {
-    width: 24px;
-    height: 2px;
-    background: var(--text-dark);
-    display: block;
-  }
-}
+      /* Hide desktop right section */
+      .nav-emergency {
+        display: none;
+      }
+
+      /* Show hamburger */
+      .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        width: 24px;
+        height: 2px;
+        background: var(--text-dark);
+        display: block;
+      }
+    }
+
     /* ---- PAGE HERO ---- */
     .page-hero {
       background: linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 60%, #C05078 100%);
@@ -252,6 +254,7 @@
       font-size: 0.7rem;
       color: rgba(255, 255, 255, 0.55);
       margin-bottom: 1px;
+      text-align: left;
     }
 
     .hqc-info .val {
@@ -450,6 +453,7 @@
 
     /* ---- MAP SECTION ---- */
     .map-section {
+      margin-top: 30px;
       padding: 0 0 80px;
       background: var(--off-white);
     }
@@ -887,9 +891,9 @@
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
       <div class="nav-emergency">
-        <a href="tel:065611099" class="emergency-badge">
+        <a href="tel:+971 65 611099" class="emergency-badge">
           <span class="pulse"></span>
-          <span>Emergency: 065611099</span>
+          <span>Emergency: +971 65 611099</span>
         </a>
         <div class="nav-socials">
           <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank" aria-label="Instagram">
@@ -944,7 +948,7 @@
             </div>
             <div class="hqc-info">
               <div class="lbl">Phone (Sharjah)</div>
-              <div class="val">065611099</div>
+              <div class="val">+971 65 611099</div>
             </div>
           </div>
           <div class="hqc-item">
@@ -977,15 +981,15 @@
   </section>
 
   <!-- BRANCHES -->
-  <section class="branches-section">
+  <!-- <section class="branches-section">
     <div class="section" style="padding-top:0;padding-bottom:0;">
       <div class="section-sub fade-up">Our Branches</div>
       <h2 class="section-title fade-up">Two Locations, <em>One Standard of Excellence</em></h2>
       <div class="divider fade-up"></div>
-      <div class="branches-grid">
+      <div class="branches-grid"> -->
 
-        <!-- Sharjah Branch -->
-        <div class="branch-card fade-up">
+  <!-- Sharjah Branch -->
+  <!-- <div class="branch-card fade-up">
           <div class="branch-card-header">
             <div class="branch-badge">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -1018,7 +1022,7 @@
               </div>
               <div class="branch-detail-text">
                 <div class="lbl">Phone</div>
-                <div class="val"><a href="tel:065611099">065611099</a></div>
+                <div class="val"><a href="tel:+971 65 611099">+971 65 611099</a></div>
               </div>
             </div>
             <div class="branch-detail">
@@ -1049,10 +1053,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <!-- Kuwait Branch -->
-        <div class="branch-card fade-up" style="transition-delay:0.15s">
+  <!-- Kuwait Branch -->
+  <!-- <div class="branch-card fade-up" style="transition-delay:0.15s">
           <div class="branch-card-header" style="background: linear-gradient(135deg, #3A2A5A, #5A3080);">
             <div class="branch-badge" style="background:rgba(255,255,255,0.15);">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -1120,7 +1124,7 @@
 
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- MAP -->
   <section class="map-section">
@@ -1247,20 +1251,18 @@
                   <polyline points="12 6 12 12 16 14" />
                 </svg>
               </div>
-              Clinic Hours
+              Operating Hours
             </h4>
             <ul class="sidebar-info-list">
               <li>
                 <span class="lbl">Sat – Thu</span>
-                <span class="val">9:00 AM – 9:00 PM</span>
-              </li>
-              <li>
-                <span class="lbl">Friday</span>
-                <span class="val">4:00 PM – 9:00 PM</span>
+                <span class="val">7:00 AM – 12:00 AM</span>
               </li>
               <li style="border-bottom:none;">
-                <span class="lbl">Emergency</span>
-                <span class="val" style="color:var(--maroon);font-weight:700;">Always Available</span>
+                <span class="lbl">Availability</span>
+                <span class="val" style="color:var(--maroon);font-weight:700;">
+                  Open 7 Days a Week
+                </span>
               </li>
             </ul>
           </div>
@@ -1277,7 +1279,7 @@
             <ul class="sidebar-info-list">
               <li>
                 <span class="lbl">Phone</span>
-                <span class="val"><a href="tel:065611099">065611099</a></span>
+                <span class="val"><a href="tel:+971 65 611099">+971 65 611099</a></span>
               </li>
               <li>
                 <span class="lbl">Email</span>
@@ -1300,11 +1302,11 @@
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
             </div>
-            <h4>Emergency? Call Now</h4>
-            <p>For urgent medical needs, don't wait — call us immediately. Our medical team is ready 24/7.</p>
-            <a href="tel:065611099" class="emergency-phone">
+            <h4>Speak to Our Team</h4>
+            <p>Have a concern? Our staff is here to guide you and book the right consultation.</p>
+            <a href="tel:+971 65 611099" class="emergency-phone">
               <span class="pulse-ring"><span class="dot-inner"></span></span>
-              065611099
+              +971 65 611099
             </a>
           </div>
 
@@ -1315,47 +1317,34 @@
 
   <!-- INSURANCE TICKER -->
   <div class="insurance-band">
-    <div style="text-align:center;font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-soft);margin-bottom:16px;">Accepted Insurance Providers</div>
-    <div class="ticker-wrap" id="ticker">
-      <div class="ticker-item"><span class="ticker-dot"></span>Oman Insurance</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>SAICO Health</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>NGI</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Nextcare</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>NAS</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Neuron</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>MSH</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>MetLife</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Mednet</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Lifeline</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Inayah</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>FMC</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>eCare</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>AXA</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Al Madallah</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Al Buhaira</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Afiya</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>ADNIC</div>
-      <!-- Duplicate for seamless loop -->
-      <div class="ticker-item"><span class="ticker-dot"></span>Oman Insurance</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>SAICO Health</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>NGI</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Nextcare</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>NAS</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Neuron</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>MSH</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>MetLife</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Mednet</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Lifeline</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Inayah</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>FMC</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>eCare</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>AXA</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Al Madallah</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Al Buhaira</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>Afiya</div>
-      <div class="ticker-item"><span class="ticker-dot"></span>ADNIC</div>
+  <div class="insurance-title">Accepted Insurance Providers</div>
+
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+
+      <!-- One set -->
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Oman-Insurance.jpg"></div>
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/SAICOHEALTH.jpg"></div>
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NGI.jpg"></div>
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Nextcare.jpg"></div>
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NAS.jpg"></div>
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/neuron.jpg"></div>
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MSH.jpg"></div>
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MetLife.jpg"></div>
+
+      <!-- Duplicate for loop -->
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Oman-Insurance.jpg"></div>
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/SAICOHEALTH.jpg"></div>
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NGI.jpg"></div>
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Nextcare.jpg"></div>
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NAS.jpg"></div>
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/neuron.jpg"></div>
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MSH.jpg"></div>
+      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MetLife.jpg"></div>
+
     </div>
   </div>
+</div>
 
   <!-- FOOTER -->
   <footer>
@@ -1406,7 +1395,7 @@
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
             </span>
-            <span>065611099</span>
+            <span>+971 65 611099</span>
           </li>
           <li>
             <span class="contact-icon">
