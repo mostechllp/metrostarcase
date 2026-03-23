@@ -7,6 +7,75 @@
 <link rel="stylesheet" href="shared.css">
 <style>
 
+    /* ---- NAVBAR ---- */
+    .navbar {
+      position: relative;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    /* ---- MOBILE NAV ---- */
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 32px;
+        gap: 16px;
+        border-top: 1px solid var(--border);
+
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: 0.3s ease;
+      }
+
+      .nav-links.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      /* Hide desktop right section */
+      .nav-emergency {
+        display: none;
+      }
+
+      /* Show hamburger */
+      .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        width: 24px;
+        height: 2px;
+        background: var(--text-dark);
+        display: block;
+      }
+    }
+
+
 /* ---- PROFILE HERO ---- */
 .profile-hero {
   background: linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 60%, #C05078 100%);
@@ -850,7 +919,7 @@ window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
 });
 function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('active');
 }
 
 renderProfile();
