@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Metro Starcare Medical Centre | Metro Medical Group — Your Health, Our Priority</title>
+  <title>مترو ستاركير الطبي | مجموعة مترو الطبية — صحتك أولويتنا</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="../shared.css">
   <style>
     /* ---- NAVBAR ---- */
     .hamburger {
@@ -368,11 +368,17 @@
     .why-item:not(:last-child)::after {
       content: '';
       position: absolute;
-      right: 0;
+      left: 0;
+      right: auto;
       top: 20%;
       bottom: 20%;
       width: 1px;
       background: var(--border);
+    }
+
+    [dir="rtl"] .why-item:not(:last-child)::after {
+      left: auto;
+      right: 0;
     }
 
     .why-icon {
@@ -421,12 +427,6 @@
       border-radius: 20px;
       overflow: hidden;
       box-shadow: var(--shadow-lg);
-    }
-
-    .about-img-main img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
 
     .about-img-secondary {
@@ -603,8 +603,6 @@
       }
     }
 
-    /* ---- SERVICES ---- */
-
     .service-card {
       transition: var(--transition);
     }
@@ -613,8 +611,6 @@
       color: var(--maroon);
       transition: var(--transition);
     }
-
-    /* Hover effect */
 
     .service-card:hover .service-icon {
       color: white;
@@ -770,7 +766,6 @@
       color: var(--text-soft);
     }
 
-    /* HERO RESPONSIVE */
     @media (max-width: 900px) {
       .hero-inner {
         grid-template-columns: 1fr;
@@ -810,7 +805,35 @@
         display: none;
       }
     }
-    
+
+    /* RTL specific tweaks */
+    [dir="rtl"] .hero-float-1 {
+      right: auto;
+      left: -24px;
+    }
+
+    [dir="rtl"] .hero-float-2 {
+      left: auto;
+      right: -30px;
+    }
+
+    [dir="rtl"] .about-img-main {
+      left: auto;
+      right: 0;
+    }
+
+    [dir="rtl"] .about-img-secondary {
+      right: auto;
+      left: 0;
+    }
+
+    [dir="rtl"] .why-item {
+      text-align: right;
+    }
+
+    [dir="rtl"] .about-right ul li {
+      flex-direction: row;
+    }
   </style>
 </head>
 
@@ -819,24 +842,24 @@
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
+      <a href="/arabic/index.html" class="nav-logo">
         <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo" onerror="this.style.display='none'">
         <div class="nav-logo-text">
-          <span class="brand">Metro Starcare</span>
-          <span class="sub">Metro Medical Group</span>
+          <span class="brand">مترو ستاركير</span>
+          <span class="sub">مجموعة مترو الطبية</span>
         </div>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="doctors.html">Doctors</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="/arabic/index.html" class="active">الرئيسية</a></li>
+        <li><a href="/arabic/about.html">من نحن</a></li>
+        <li><a href="/arabic/doctors.html">الأطباء</a></li>
+        <li><a href="/arabic/services.html">الخدمات</a></li>
+        <li><a href="/arabic/contact.html">اتصل بنا</a></li>
       </ul>
       <div class="nav-emergency">
         <a href="tel:+97165611099" class="emergency-badge">
           <span class="pulse"></span>
-          <span>Book Appointment: +971 65 611099</span>
+          <span>حجز موعد: +971 65 611099</span>
         </a>
         <div class="nav-socials">
           <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank" aria-label="Instagram">
@@ -854,11 +877,10 @@
       <div class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </div>
-
       <div class="nav-lang-switch">
-        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="en">EN</button>
         <span class="lang-divider">|</span>
-        <button class="lang-btn" data-lang="ar">عربي</button>
+        <button class="lang-btn active" data-lang="ar">عربي</button>
       </div>
     </div>
   </nav>
@@ -874,48 +896,48 @@
       <div class="hero-left fade-up">
         <div class="hero-eyebrow">
           <span class="dot"></span>
-          Sharjah & Kuwait · Premium Healthcare
+          الشارقة والكويت · رعاية صحية متميزة
         </div>
         <h1>
-          Your Health,<br>
-          <span class="italic">Our Priority</span> —<br>
-          Experience Premium Care
+          صحتك،<br>
+          <span class="italic">أولويتنا</span> —<br>
+          تجربة رعاية استثنائية
         </h1>
         <p class="hero-desc">
-          Metro Starcare Medical Centre, under Metro Medical Group, has been a trusted healthcare provider for over a decade — delivering world-class medical services with compassion and excellence.
+          مركز مترو ستاركير الطبي، التابع لمجموعة مترو الطبية، هو وجهة موثوقة للرعاية الصحية لأكثر من عقد من الزمان — نقدم خدمات طبية عالمية المستوى بروح من الرحمة والتميز.
         </p>
         <div class="hero-btns">
-          <a href="doctors.html" class="btn btn-white">
+          <a href="../doctors.html" class="btn btn-white">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
-            Find a Doctor
+            ابحث عن طبيب
           </a>
-          <a href="about.html" class="btn" style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.3);">
-            Learn About Us
+          <a href="../about.html" class="btn" style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.3);">
+            تعرف علينا
           </a>
         </div>
       </div>
       <div class="hero-right fade-up" style="transition-delay:0.2s">
         <div class="hero-float-card hero-float-1">
-          <div class="float-label">Medical Director</div>
-          <div class="float-value">Dr. Rasna</div>
+          <div class="float-label">المدير الطبي</div>
+          <div class="float-value">د. راسنا</div>
         </div>
         <div class="hero-card-main">
           <div class="hero-img-area">
-            <img src="home_docs/rasna_munaifa.png" alt="Dr. Rasna Munaifa Koroth" onerror="this.src=''; this.parentElement.style.background='linear-gradient(160deg, #F2D9E6, #E8C4D4)'; this.style.display='none'">
+            <img src="../home_docs/rasna_munaifa.png" alt="Dr. Rasna Munaifa Koroth" onerror="this.src=''; this.parentElement.style.background='linear-gradient(160deg, #F2D9E6, #E8C4D4)'; this.style.display='none'">
             <div class="hero-img-overlay">
-              <div class="doc-name">Dr. Rasna Munaifa Koroth</div>
-              <div class="doc-role">Medical Director · General Practitioner</div>
+              <div class="doc-name">د. راسنا منيفة كوروث</div>
+              <div class="doc-role">المدير الطبي · طبيب عام</div>
             </div>
           </div>
           <div class="hero-card-bottom">
             <div class="avail-badge">
               <span class="avail-dot"></span>
-              Available Today
+              متاحة اليوم
             </div>
-            <a href="contact.html" class="btn btn-primary" style="padding:10px 20px;font-size:0.82rem;">Book Appointment</a>
+            <a href="../contact.html" class="btn btn-primary" style="padding:10px 20px;font-size:0.82rem;">احجز موعداً</a>
           </div>
         </div>
       </div>
@@ -926,54 +948,46 @@
   <div class="why-strip">
     <div class="why-inner">
       <div class="why-item fade-up">
-        <div class="why-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
             <polyline points="22 4 12 14.01 9 11.01" />
-          </svg>
-        </div>
+          </svg></div>
         <div class="why-text">
-          <h4>JCI-Standard Care</h4>
-          <p>Treatments and processes matching global healthcare accreditation standards.</p>
+          <h4>رعاية بمعايير JCI</h4>
+          <p>علاجات وعمليات تطابق المعايير العالمية للاعتماد الصحي.</p>
         </div>
       </div>
-      <div class="why-item fade-up" style="transition-delay:0.1s">
-        <div class="why-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+      <div class="why-item fade-up">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
             <circle cx="9" cy="7" r="4" />
             <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-          </svg>
-        </div>
+          </svg></div>
         <div class="why-text">
-          <h4>Expert Specialists</h4>
-          <p>15+ qualified doctors across diverse medical specialties.</p>
+          <h4>أخصائيون خبراء</h4>
+          <p>أكثر من 15 طبيباً مؤهلاً في مختلف التخصصات الطبية.</p>
         </div>
       </div>
-      <div class="why-item fade-up" style="transition-delay:0.2s">
-        <div class="why-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+      <div class="why-item fade-up">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
             <line x1="16" y1="2" x2="16" y2="6" />
             <line x1="8" y1="2" x2="8" y2="6" />
             <line x1="3" y1="10" x2="21" y2="10" />
-          </svg>
-        </div>
+          </svg></div>
         <div class="why-text">
-          <h4>Easy Appointments</h4>
-          <p>Book your visit quickly — walk-ins and emergency care always welcome.</p>
+          <h4>مواعيد سهلة</h4>
+          <p>احجز زيارتك بسرعة — نرحب بالحضور المباشر والرعاية العاجلة.</p>
         </div>
       </div>
-      <div class="why-item fade-up" style="transition-delay:0.3s">
-        <div class="why-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+      <div class="why-item fade-up">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
             <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-          </svg>
-        </div>
+          </svg></div>
         <div class="why-text">
-          <h4>Patient-Centric</h4>
-          <p>Compassionate care tailored to every individual and family.</p>
+          <h4>ركزنا على المريض</h4>
+          <p>رعاية متعاطفة مصممة لكل فرد وعائلة.</p>
         </div>
       </div>
     </div>
@@ -981,33 +995,25 @@
 
   <!-- ABOUT SECTION -->
   <section style="padding:88px 0; background: var(--off-white);">
-    <div class="section" style="padding-top:0;padding-bottom:0;">
+    <div class="section">
       <div class="about-wrap">
         <div class="about-img-group fade-up">
-          <div class="about-img-main">
-            <img src="https://www.metrostarcare.ae/assets/images/about/5.jpg" alt="Metro Starcare Medical Centre" onerror="this.parentElement.style.background='linear-gradient(135deg,#F2D9E6,#E8C4D4)'">
-          </div>
-          <div class="about-img-secondary">
-            <img src="https://www.metrostarcare.ae/assets/images/about/1.jpg" alt="Medical Care" onerror="this.parentElement.style.background='linear-gradient(135deg,#8B1A4A,#B8426A)'">
-          </div>
-          <!-- <div class="about-cert">
-          <div class="num">10+</div>
-          <div class="lbl">Years<br>of Excellence</div>
-        </div> -->
+          <div class="about-img-main"><img src="https://www.metrostarcare.ae/assets/images/about/5.jpg" alt="Metro Starcare Medical Centre"></div>
+          <div class="about-img-secondary"><img src="https://www.metrostarcare.ae/assets/images/about/1.jpg" alt="Medical Care"></div>
         </div>
-        <div class="about-right fade-up" style="transition-delay:0.2s">
-          <div class="section-sub">About Metro Starcare</div>
-          <h2 class="section-title">Dedicated to Excellence in Healthcare for Over a Decade</h2>
+        <div class="about-right fade-up">
+          <div class="section-sub">حول مترو ستاركير</div>
+          <h2 class="section-title">ملتزمون بالتميز في الرعاية الصحية لأكثر من عقد</em></h2>
           <div class="divider"></div>
-          <p class="section-desc">Metro Starcare Medical Centre, under the Metro Medical Group, has been a trusted healthcare provider for over a decade. With branches in Sharjah, UAE and Kuwait, we deliver state-of-the-art medical services tailored to individual needs.</p>
-          <ul style="margin-top:28px;">
+          <p class="section-desc">مركز مترو ستاركير الطبي، تحت مظلة مجموعة مترو الطبية، هو مقدم رعاية صحية موثوق لأكثر من عقد. بفروعه في الشارقة والإمارات والكويت، نقدم خدمات طبية متطورة مصممة حسب احتياجات كل فرد.</p>
+          <ul>
             <li>
               <div class="about-li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2.5">
                   <polyline points="20 6 9 17 4 12" />
                 </svg></div>
               <div class="about-li-text">
-                <h5>Comprehensive Medical Consultations</h5>
-                <p>Expert diagnosis and personalised treatment plans for every patient.</p>
+                <h5>استشارات طبية شاملة</h5>
+                <p>تشخيص دقيق وخطط علاجية شخصية لكل مريض.</p>
               </div>
             </li>
             <li>
@@ -1015,8 +1021,8 @@
                   <polyline points="20 6 9 17 4 12" />
                 </svg></div>
               <div class="about-li-text">
-                <h5>Advanced Technology & Treatments</h5>
-                <p>Cutting-edge equipment ensuring precision and effective outcomes.</p>
+                <h5>تقنيات متقدمة وعلاجات حديثة</h5>
+                <p>معدات متطورة لضمان الدقة والنتائج الفعالة.</p>
               </div>
             </li>
             <li>
@@ -1024,21 +1030,18 @@
                   <polyline points="20 6 9 17 4 12" />
                 </svg></div>
               <div class="about-li-text">
-                <h5>Emergency Services</h5>
-                <p>24-hour emergency support with rapid-response medical teams.</p>
+                <h5>خدمات الطوارئ</h5>
+                <p>دعم طوارئ على مدار الساعة بفرق طبية سريعة الاستجابة.</p>
               </div>
             </li>
           </ul>
           <div class="privilege-tabs">
-            <div class="priv-tag"><span class="check">✓</span> Privilege Card</div>
-            <div class="priv-tag"><span class="check">✓</span> Free Medical Camps</div>
-            <div class="priv-tag"><span class="check">✓</span> Corporate Tie-Ups</div>
-            <div class="priv-tag"><span class="check">✓</span> Noble Services</div>
+            <div class="priv-tag"><span class="check">✓</span> بطاقة الامتياز</div>
+            <div class="priv-tag"><span class="check">✓</span> مخيمات طبية مجانية</div>
+            <div class="priv-tag"><span class="check">✓</span> اتفاقيات الشركات</div>
+            <div class="priv-tag"><span class="check">✓</span> خدمات النبلاء</div>
           </div>
-          <div style="margin-top:28px; display:flex; gap:14px;">
-            <a href="about.html" class="btn btn-primary">More About Us</a>
-            <a href="doctors.html" class="btn btn-outline">Find a Doctor</a>
-          </div>
+          <div style="margin-top:28px; display:flex; gap:14px;"><a href="../about.html" class="btn btn-primary">المزيد عنا</a><a href="../doctors.html" class="btn btn-outline">ابحث عن طبيب</a></div>
         </div>
       </div>
     </div>
@@ -1046,68 +1049,60 @@
 
   <!-- SERVICES -->
   <section class="services-bg" style="padding:88px 0;">
-    <div class="section" style="padding-top:0;padding-bottom:0;">
-      <div class="text-center" style="margin-bottom:0;">
-        <div class="section-sub">What We Offer</div>
-        <h2 class="section-title">Comprehensive Medical Services<br>for Your Complete Care</h2>
+    <div class="section">
+      <div class="text-center">
+        <div class="section-sub">ما نقدمه</div>
+        <h2 class="section-title">خدمات طبية شاملة<br>لرعايتك الكاملة</em></h2>
       </div>
       <div class="services-grid">
         <div class="service-card fade-up">
           <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
             </svg></div>
-          <h3>Gynecology</h3>
-          <p>Dedicated women's healthcare focusing on reproductive health, pregnancy care, and hormonal wellness with compassionate expert support.</p>
-          <a href="services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn More <span>→</span></a>
+          <h3>طب النساء</h3>
+          <p>رعاية صحية متخصصة للنساء تركز على الصحة الإنجابية ورعاية الحمل والتوازن الهرموني.</p><a href="../services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">اعرف المزيد <span>←</span></a>
         </div>
-        <div class="service-card fade-up" style="transition-delay:0.1s">
+        <div class="service-card fade-up">
           <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10" />
               <line x1="2" y1="12" x2="22" y2="12" />
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
             </svg></div>
-          <h3>General Medicine</h3>
-          <p>Comprehensive primary healthcare services to diagnose, treat, and manage a wide range of medical conditions with personalised care.</p>
-          <a href="services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn More <span>→</span></a>
+          <h3>الطب العام</h3>
+          <p>خدمات رعاية صحية أولية شاملة لتشخيص وعلاج وإدارة مجموعة واسعة من الحالات الطبية.</p><a href="../services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">اعرف المزيد <span>←</span></a>
         </div>
-        <div class="service-card fade-up" style="transition-delay:0.2s">
+        <div class="service-card fade-up">
           <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
               <polyline points="9 22 9 12 15 12 15 22" />
             </svg></div>
-          <h3>ENT</h3>
-          <p>Expert care for ear, nose, throat and related structures of the head and neck — from hearing loss to sinus and throat disorders.</p>
-          <a href="services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn More <span>→</span></a>
+          <h3>أنف وأذن وحنجرة</h3>
+          <p>رعاية متخصصة للأذن والأنف والحنجرة والهياكل المرتبطة بالرأس والرقبة.</p><a href="../services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">اعرف المزيد <span>←</span></a>
         </div>
-        <div class="service-card fade-up" style="transition-delay:0.3s">
+        <div class="service-card fade-up">
           <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M18 20V10M12 20V4M6 20v-6" />
             </svg></div>
-          <h3>Orthopedics</h3>
-          <p>Expert care for musculoskeletal conditions including fractures, joint disorders, and spine-related issues to restore mobility.</p>
-          <a href="services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn More <span>→</span></a>
+          <h3>جراحة العظام</h3>
+          <p>رعاية متخصصة لحالات الجهاز العضلي الهيكلي بما في ذلك الكسور واضطرابات المفاصل والعمود الفقري.</p><a href="../services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">اعرف المزيد <span>←</span></a>
         </div>
-        <div class="service-card fade-up" style="transition-delay:0.4s">
+        <div class="service-card fade-up">
           <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="8" r="4" />
               <path d="M12 12v8M9 18l3 3 3-3" />
             </svg></div>
-          <h3>Ophthalmology</h3>
-          <p>Specialised care for vision and eye health, including diagnostic and treatment services for all age groups.</p>
-          <a href="services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn More <span>→</span></a>
+          <h3>طب العيون</h3>
+          <p>رعاية متخصصة للرؤية وصحة العين، بما في ذلك خدمات التشخيص والعلاج لجميع الفئات العمرية.</p><a href="../services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">اعرف المزيد <span>←</span></a>
         </div>
-        <div class="service-card fade-up" style="transition-delay:0.5s">
+        <div class="service-card fade-up">
           <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg></div>
-          <h3>Dermatology & Cosmetology</h3>
-          <p>Skin, hair, and beauty treatments ranging from clinical dermatology to advanced cosmetic procedures.</p>
-          <a href="services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn More <span>→</span></a>
+          <h3>الأمراض الجلدية والتجميل</h3>
+          <p>علاجات البشرة والشعر والجمال بدءاً من الأمراض الجلدية السريرية وصولاً إلى الإجراءات التجميلية المتقدمة.</p><a href="../services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">اعرف المزيد <span>←</span></a>
         </div>
       </div>
-      <div style="text-align:center; margin-top:40px;">
-        <a href="services.html" class="btn btn-primary">View All Services</a>
-      </div>
+      <div style="text-align:center; margin-top:40px;"><a href="../services.html" class="btn btn-primary">جميع الخدمات</a></div>
     </div>
   </section>
 
@@ -1116,100 +1111,42 @@
     <div class="section" style="padding:0 32px;">
       <div class="flex-between" style="margin-bottom:48px;flex-wrap:wrap;gap:20px;">
         <div>
-          <div class="section-sub">Our Specialists</div>
-          <h2 class="section-title">Meet Our Expert Team<br>of Doctors</h2>
-        </div>
-        <a href="doctors.html" class="btn btn-outline">View All Doctors</a>
+          <div class="section-sub">أخصائيو المركز</div>
+          <h2 class="section-title">تعرف على فريقنا الخبير</em><br>من الأطباء</h2>
+        </div><a href="../doctors.html" class="btn btn-outline">جميع الأطباء</a>
       </div>
       <div class="doctors-preview">
-        <!-- Dr. Rasna — Medical Director, featured first -->
         <div class="doctor-card fade-up">
-          <div class="director-badge">⭐ Medical Director</div>
-          <div class="doctor-img-wrap">
-            <img class="rasna-img" src="home_docs/rasna_munaifa.png" alt="Dr. Rasna" onerror="this.style.display='none'">
-            <div class="doctor-placeholder" id="rasna-ph" style="display:none;">
-              <div class="icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg></div>
-              <span>Dr. Rasna Munaifa</span>
-            </div>
-          </div>
-          <div class="doctor-info">
-            <span class="doctor-specialty-tag">General Practice</span>
-            <div class="doctor-name">Dr. Rasna Munaifa Koroth</div>
-            <div class="doctor-deg">MBBS · Medical Director</div>
-            <div class="doctor-card-footer">
-              <a href="doctors.html" class="btn btn-outline" style="padding:8px 16px;font-size:0.78rem;">Profile</a>
-              <a href="contact.html" class="btn btn-primary" style="padding:8px 16px;font-size:0.78rem;">Book</a>
-            </div>
+          <div class="director-badge">⭐ المدير الطبي</div>
+          <div class="doctor-img-wrap"><img class="rasna-img" src="../home_docs/rasna_munaifa.png" alt="Dr. Rasna"></div>
+          <div class="doctor-info"><span class="doctor-specialty-tag">طب عام</span>
+            <div class="doctor-name">د. راسنا منيفة كوروث</div>
+            <div class="doctor-deg">بكالوريوس طب وجراحة · مدير طبي</div>
+            <div class="doctor-card-footer"><a href="../doctors.html" class="btn btn-outline" style="padding:8px 16px;font-size:0.78rem;">الملف الشخصي</a><a href="../contact.html" class="btn btn-primary" style="padding:8px 16px;font-size:0.78rem;">احجز</a></div>
           </div>
         </div>
-        <!-- Dr. Nidhin -->
-        <div class="doctor-card fade-up" style="transition-delay:0.1s">
-          <div class="doctor-img-wrap">
-            <img src="home_docs/nidhin_k_padmanabhan.png" alt="Dr. Nidhin K Padmanabhan" onerror="this.style.display='none'">
-            <div class="doctor-placeholder">
-              <div class="icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg></div>
-              <span>Dr. Nidhin K Padmanabhan</span>
-            </div>
-          </div>
-          <div class="doctor-info">
-            <span class="doctor-specialty-tag">General Practice</span>
-            <div class="doctor-name">Dr. Nidhin K Padmanabhan</div>
-            <div class="doctor-deg">MBBS, MS · Specialist Orthopedics</div>
-            <div class="doctor-card-footer">
-              <a href="doctors.html" class="btn btn-outline" style="padding:8px 16px;font-size:0.78rem;">Profile</a>
-              <a href="contact.html" class="btn btn-primary" style="padding:8px 16px;font-size:0.78rem;">Book</a>
-            </div>
+        <div class="doctor-card fade-up">
+          <div class="doctor-img-wrap"><img src="../home_docs/nidhin_k_padmanabhan.png" alt="Dr. Nidhin"></div>
+          <div class="doctor-info"><span class="doctor-specialty-tag">جراحة العظام</span>
+            <div class="doctor-name">د. نيدهين ك بادمانابان</div>
+            <div class="doctor-deg">بكالوريوس طب وجراحة، ماجستير جراحة · أخصائي عظام</div>
+            <div class="doctor-card-footer"><a href="../doctors.html" class="btn btn-outline">الملف الشخصي</a><a href="../contact.html" class="btn btn-primary">احجز</a></div>
           </div>
         </div>
-
-        <!-- Dr. Sandhya -->
-        <div class="doctor-card fade-up" style="transition-delay:0.3s">
-          <div class="doctor-img-wrap">
-            <img src="home_docs/sandya_subashchandran.png" alt="Dr. Sandhya Subhashchandran" onerror="this.style.display='none'">
-            <div class="doctor-placeholder">
-              <div class="icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg></div>
-              <span>Dr. Sandhya Subhashchandran</span>
-            </div>
-          </div>
-          <div class="doctor-info">
-            <span class="doctor-specialty-tag">Gynaecology</span>
-            <div class="doctor-name">Dr. Sandhya Subhashchandran</div>
-            <div class="doctor-deg">MBBS, MD · Specialist Gynaecologist</div>
-            <div class="doctor-card-footer">
-              <a href="doctors.html" class="btn btn-outline" style="padding:8px 16px;font-size:0.78rem;">Profile</a>
-              <a href="contact.html" class="btn btn-primary" style="padding:8px 16px;font-size:0.78rem;">Book</a>
-            </div>
+        <div class="doctor-card fade-up">
+          <div class="doctor-img-wrap"><img src="../home_docs/sandya_subashchandran.png" alt="Dr. Sandhya"></div>
+          <div class="doctor-info"><span class="doctor-specialty-tag">طب النساء</span>
+            <div class="doctor-name">د. سانديا سوبها شاندران</div>
+            <div class="doctor-deg">بكالوريوس طب وجراحة، دكتوراه في الطب · أخصائية نساء</div>
+            <div class="doctor-card-footer"><a href="../doctors.html" class="btn btn-outline">الملف الشخصي</a><a href="../contact.html" class="btn btn-primary">احجز</a></div>
           </div>
         </div>
-        <!-- Dr. Ali Akbar -->
-        <div class="doctor-card fade-up" style="transition-delay:0.2s">
-          <div class="doctor-img-wrap">
-            <img src="home_docs/ali_akbar_abdul_salam.png" alt="Dr. Ali Akbar" onerror="this.style.display='none'">
-            <div class="doctor-placeholder">
-              <div class="icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg></div>
-              <span>Dr. Ali Akbar</span>
-            </div>
-          </div>
-          <div class="doctor-info">
-            <span class="doctor-specialty-tag">ENT</span>
-            <div class="doctor-name">Dr. Ali Akbar</div>
-            <div class="doctor-deg">MBBS, MS · Specialist ENT</div>
-            <div class="doctor-card-footer">
-              <a href="doctors.html" class="btn btn-outline" style="padding:8px 16px;font-size:0.78rem;">Profile</a>
-              <a href="contact.html" class="btn btn-primary" style="padding:8px 16px;font-size:0.78rem;">Book</a>
-            </div>
+        <div class="doctor-card fade-up">
+          <div class="doctor-img-wrap"><img src="../home_docs/ali_akbar_abdul_salam.png" alt="Dr. Ali Akbar"></div>
+          <div class="doctor-info"><span class="doctor-specialty-tag">أنف وأذن وحنجرة</span>
+            <div class="doctor-name">د. علي أكبر عبد السلام</div>
+            <div class="doctor-deg">بكالوريوس طب وجراحة، ماجستير جراحة · أخصائي أنف وأذن وحنجرة</div>
+            <div class="doctor-card-footer"><a href="../doctors.html" class="btn btn-outline">الملف الشخصي</a><a href="../contact.html" class="btn btn-primary">احجز</a></div>
           </div>
         </div>
       </div>
@@ -1218,31 +1155,23 @@
 
   <!-- CTA BAND -->
   <div class="cta-band">
-    <h2>Setting the Gold Standard in<br>Medical Care &amp; Patient Safety</h2>
-    <p>Our dedicated team is committed to delivering safe, effective, and compassionate care for every patient who walks through our doors.</p>
-    <div class="btn-group">
-      <a href="contact.html" class="btn btn-white">Book an Appointment</a>
-      <a href="tel:+971 65 611099" class="btn" style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.35);">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <h2>وضع المعيار الذهبي في<br>الرعاية الطبية وسلامة المرضى</h2>
+    <p>فريقنا المتخصص ملتزم بتقديم رعاية آمنة وفعالة ومتعاطفة لكل مريض يدخل أبوابنا.</p>
+    <div class="btn-group"><a href="../contact.html" class="btn btn-white">احجز موعداً</a><a href="tel:+97165611099" class="btn" style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.35);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-        </svg>
-        Call +971 65 611099
-      </a>
-    </div>
+        </svg>اتصل +971 65 611099</a></div>
   </div>
 
   <!-- CORPORATE -->
   <section style="padding:88px 0; background:var(--off-white);">
-    <div class="section" style="padding:0 32px;">
+    <div class="section">
       <div class="corporate-wrap">
-        <div class="corporate-img fade-up">
-          <img src="https://www.metrostarcare.ae/assets/images/about/2.jpg" alt="Corporate Healthcare" onerror="this.style.display='none'">
-        </div>
-        <div class="fade-up" style="transition-delay:0.2s">
-          <div class="section-sub">For Organisations</div>
-          <h2 class="section-title">Empowering Organisations<br>with Better Health Solutions</h2>
+        <div class="corporate-img fade-up"><img src="https://www.metrostarcare.ae/assets/images/about/2.jpg" alt="Corporate Healthcare"></div>
+        <div class="fade-up">
+          <div class="section-sub">للمؤسسات</div>
+          <h2 class="section-title">تمكين المؤسسات<br>بحلول صحية أفضل</em></h2>
           <div class="divider"></div>
-          <p class="section-desc">Our Corporate Medical Privilege Card and wellness packages are designed to support the health of your employees and their families.</p>
+          <p class="section-desc">تم تصميم بطاقة الامتياز الطبي للشركات وباقات العافية لدعم صحة موظفيك وعائلاتهم.</p>
           <div class="corp-features">
             <div class="corp-feat">
               <div class="corp-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
@@ -1252,8 +1181,8 @@
                   <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg></div>
               <div>
-                <h5>Comprehensive Employee Wellness</h5>
-                <p>Regular check-ups, vaccinations, and preventive care packages for your whole team.</p>
+                <h5>صحة شاملة للموظفين</h5>
+                <p>فحوصات دورية وتطعيمات وباقات وقائية للفريق بأكمله.</p>
               </div>
             </div>
             <div class="corp-feat">
@@ -1261,8 +1190,8 @@
                   <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                 </svg></div>
               <div>
-                <h5>Enhanced Productivity & Well-being</h5>
-                <p>Healthier employees, better performance — invest in your team's health today.</p>
+                <h5>تعزيز الإنتاجية والرفاهية</h5>
+                <p>موظفون أكثر صحة، أداء أفضل — استثمر في صحة فريقك اليوم.</p>
               </div>
             </div>
             <div class="corp-feat">
@@ -1271,23 +1200,21 @@
                   <polyline points="14 2 14 8 20 8" />
                 </svg></div>
               <div>
-                <h5>Tailored Corporate Solutions</h5>
-                <p>Flexible packages designed around your company's specific healthcare needs.</p>
+                <h5>حلول مؤسسية مخصصة</h5>
+                <p>باقات مرنة مصممة وفق احتياجات شركتك الصحية الخاصة.</p>
               </div>
             </div>
-          </div>
-          <a href="contact.html" class="btn btn-primary">Explore Corporate Plans</a>
+          </div><a href="../contact.html" class="btn btn-primary">استكشف خطط الشركات</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- INSURANCE TICKER -->
   <div class="insurance-band">
-    <div class="insurance-title">Accepted Insurance Providers</div>
+    <div class="insurance-title">مقدمو التأمين المعتمدون</div>
 
     <div class="ticker-wrap">
-      <div class="ticker-track">
+      <div class="ticker-track-ar">
 
         <!-- One set -->
         <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Oman-Insurance.jpg"></div>
@@ -1310,7 +1237,7 @@
         <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/ADNIC.jpg"></div>
 
         <!-- Duplicate for loop -->
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Oman-Insurance.jpg"></div>
+         <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Oman-Insurance.jpg"></div>
         <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/SAICOHEALTH.jpg"></div>
         <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NGI.jpg"></div>
         <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Nextcare.jpg"></div>
@@ -1336,95 +1263,65 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo">
-        <p>Metro Starcare Medical Centre, under Metro Medical Group, is committed to providing world-class healthcare services with compassion, excellence, and personalised attention for every patient.</p>
-        <div class="footer-socials" style="margin-top:20px;">
-          <a href="https://www.instagram.com/starcare.uae" class="footer-social" target="_blank">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-            </svg>
-          </a>
-          <a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+      <div class="footer-brand"><img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo">
+        <p>مركز مترو ستاركير الطبي، التابع لمجموعة مترو الطبية، ملتزم بتقديم خدمات رعاية صحية عالمية المستوى برحمة وتميز واهتمام شخصي لكل مريض.</p>
+        <div class="footer-socials"><a href="https://www.instagram.com/starcare.uae" class="footer-social"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z" />
+            </svg></a><a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg>
-          </a>
-        </div>
+            </svg></a></div>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4>الخدمات</h4>
         <ul>
-          <li><a href="services.html">General Medicine</a></li>
-          <li><a href="services.html">Gynecology</a></li>
-          <li><a href="services.html">Pediatrics</a></li>
-          <li><a href="services.html">Orthopedics</a></li>
-          <li><a href="services.html">ENT</a></li>
-          <li><a href="services.html">Ophthalmology</a></li>
-          <li><a href="services.html">Dermatology</a></li>
+          <li><a href="../services.html">الطب العام</a></li>
+          <li><a href="../services.html">طب النساء</a></li>
+          <li><a href="../services.html">طب الأطفال</a></li>
+          <li><a href="../services.html">جراحة العظام</a></li>
+          <li><a href="../services.html">أنف وأذن وحنجرة</a></li>
+          <li><a href="../services.html">طب العيون</a></li>
+          <li><a href="../services.html">الأمراض الجلدية</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Quick Links</h4>
+        <h4>روابط سريعة</h4>
         <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="doctors.html">Our Doctors</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="../about.html">من نحن</a></li>
+          <li><a href="../doctors.html">أطباؤنا</a></li>
+          <li><a href="../services.html">الخدمات</a></li>
+          <li><a href="../contact.html">اتصل بنا</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4>اتصل بنا</h4>
         <ul class="footer-contact">
-          <li>
-            <span class="contact-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-            </span>
-            <span>+971 65 611099</span>
-          </li>
-          <li>
-            <span class="contact-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              </svg></span><span>+971 65 611099</span></li>
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
-              </svg>
-            </span>
-            <span>Malabar Plaza, Rolla, Sharjah, UAE</span>
-          </li>
+              </svg></span><span>مولبلا بلازا، رolla، الشارقة، الإمارات</span></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Metro Medical Group. All rights reserved.</p>
+      <p>© 2025 مجموعة مترو الطبية. جميع الحقوق محفوظة.</p>
     </div>
   </footer>
 
-
-
-  <a href="https://wa.me/97165611099" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <button id="backToTop" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+  <a href="https://wa.me/97165611099" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
   <script>
-    // Navbar scroll
     window.addEventListener('scroll', () => {
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
     });
 
     function toggleMenu() {
-      const navLinks = document.getElementById("navLinks");
-      const hamburger = document.getElementById("hamburger");
-
-      navLinks.classList.toggle("active");
-      hamburger.classList.toggle("active");
+      document.getElementById("navLinks").classList.toggle("active");
+      document.getElementById("hamburger").classList.toggle("active");
     }
-    // Fade-up on scroll
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) e.target.classList.add('visible');
@@ -1433,31 +1330,17 @@
       threshold: 0.1
     });
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-
     const backToTopBtn = document.getElementById("backToTop");
-
     window.onscroll = function() {
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        backToTopBtn.style.display = "block";
-      } else {
-        backToTopBtn.style.display = "none";
-      }
+      backToTopBtn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
     };
-
-    backToTopBtn.onclick = function() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    };
-
+    backToTopBtn.onclick = () => window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        if (btn.dataset.lang === 'en') {
-          window.location.href = '/index.html';
-        } else if (btn.dataset.lang === 'ar') {
-          window.location.href = '/arabic/index.html';
-        }
+        if (btn.dataset.lang === 'en') window.location.href = '../index.html';
       });
     });
 

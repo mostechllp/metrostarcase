@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Doctor Profile | Starcare Medical Centre</title>
+  <title>Doctor Profile | Metro Starcare Medical Centre</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="shared.css">
   <style>
     /* ---- NAVBAR ---- */
@@ -690,9 +691,9 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Starcare Logo" onerror="this.style.display='none'">
+        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo" onerror="this.style.display='none'">
         <div class="nav-logo-text">
-          <span class="brand">Starcare</span>
+          <span class="brand">Metro Starcare</span>
           <span class="sub">Metro Medical Group</span>
         </div>
       </a>
@@ -724,6 +725,11 @@
       <div class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </div>
+        <div class="nav-lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <span class="lang-divider">|</span>
+        <button class="lang-btn" data-lang="ar">عربي</button>
+      </div>
     </div>
   </nav>
 
@@ -736,8 +742,8 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Starcare Logo">
-        <p>Starcare Medical Centre, under Metro Medical Group, is committed to providing world-class healthcare services with compassion, excellence, and personalised attention for every patient.</p>
+        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo">
+        <p>Metro Starcare Medical Centre, under Metro Medical Group, is committed to providing world-class healthcare services with compassion, excellence, and personalised attention for every patient.</p>
         <div class="footer-socials" style="margin-top:20px;">
           <a href="https://www.instagram.com/starcare.uae" class="footer-social" target="_blank">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -796,6 +802,14 @@
     </div>
   </footer>
 
+  <a href="https://wa.me/97165611099" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <button id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <script>
     // =============================================
     // DOCTORS DATABASE — all content from live site
@@ -814,7 +828,7 @@
         tagline: 'Dedicated to Holistic and Compassionate Primary Care',
         bio: [
           'From the very beginning of her medical journey, <strong>Dr. Rasna Munaifa</strong> has been guided by a deep passion for healing and a strong commitment to patient-centered care. After completing her <strong>MBBS</strong>, she chose to specialize as a <strong>General Practitioner</strong>, where she could focus on building long-term, trusted relationships with her patients and serve as the first point of contact for a wide range of health concerns.',
-          'At <strong>Starcare Medical Centre</strong>, Dr. Rasna offers <strong>comprehensive care for patients of all ages</strong>, managing both acute and chronic conditions such as diabetes, hypertension, asthma, infections, and seasonal illnesses. She is also actively involved in preventive healthcare, emphasizing the importance of <strong>routine health check-ups, vaccinations, screenings, and lifestyle counseling</strong> to keep patients proactive about their well-being.',
+          'At <strong>Metro Starcare Medical Centre</strong>, Dr. Rasna offers <strong>comprehensive care for patients of all ages</strong>, managing both acute and chronic conditions such as diabetes, hypertension, asthma, infections, and seasonal illnesses. She is also actively involved in preventive healthcare, emphasizing the importance of <strong>routine health check-ups, vaccinations, screenings, and lifestyle counseling</strong> to keep patients proactive about their well-being.',
           'Her clinical expertise extends to <strong>women\'s health, family planning, and child wellness</strong>, where she provides compassionate guidance and clear health education. She is equally attentive to the unique needs of elderly patients, offering personalized geriatric care to help them live with dignity, comfort, and confidence. In addition, Dr. Rasna is skilled in performing <strong>minor surgical procedures</strong> such as wound care, suturing, and lesion removal, ensuring that even small but important medical needs are addressed promptly.',
           'What sets Dr. Rasna apart is her <strong>empathetic approach and excellent communication skills</strong>. Fluent in <strong>English, Hindi, and Malayalam</strong>, she bridges cultural and language barriers, ensuring her patients always feel heard, understood, and supported in their healthcare journey.',
           'With her <strong>patient-first philosophy, clinical expertise, and compassionate nature</strong>, <strong>Dr. Rasna Munaifa</strong> stands out as more than just a doctor—she is a <strong>trusted partner in health</strong>, guiding her patients toward better living and long-term wellness.'
@@ -1083,7 +1097,7 @@
 
     function renderProfile() {
       const doc = getDoctorFromURL();
-      document.title = `${doc.name} | Starcare Medical Centre`;
+      document.title = `${doc.name} | Metro Starcare Medical Centre`;
 
       // ---- HERO ----
       const heroHTML = `
@@ -1141,7 +1155,7 @@
 
         ${doc.tagline ? `
         <div class="profile-section fade-up" style="padding:28px 36px;background:linear-gradient(135deg,var(--maroon-deep),var(--maroon));color:white;border:none;">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;line-height:1.5;opacity:0.95;">"${doc.tagline}"</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;line-height:1.5;opacity:0.95;">"${doc.tagline}"</div>
         </div>` : ''}
 
         <div class="profile-section fade-up">
@@ -1236,7 +1250,7 @@
   <section class="other-doctors">
     <div class="section" style="padding-top:0;padding-bottom:0;">
       <div class="section-sub fade-up">Our Medical Team</div>
-      <h2 class="section-title fade-up">Meet Other <em>Specialists</em></h2>
+      <h2 class="section-title fade-up">Meet Other Specialists</h2>
       <div class="divider fade-up"></div>
       <div class="other-doctors-grid">
         ${otherDocs.map(d => `
@@ -1285,6 +1299,42 @@
       hamburger.classList.toggle("active");
     }
     renderProfile();
+
+    const backToTopBtn = document.getElementById("backToTop");
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+
+    backToTopBtn.onclick = function() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    };
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    if (btn.dataset.lang === 'en') {
+      window.location.href = '/doctor-profile.html'; 
+    } else if (btn.dataset.lang === 'ar') {
+      window.location.href = '/arabic/doctor-profile.html'; 
+    }
+  });
+});
+
+// Set active language based on current page
+if (window.location.pathname.includes('/arabic/')) {
+  document.querySelector('.lang-btn[data-lang="ar"]').classList.add('active');
+  document.querySelector('.lang-btn[data-lang="en"]').classList.remove('active');
+} else {
+  document.querySelector('.lang-btn[data-lang="en"]').classList.add('active');
+  document.querySelector('.lang-btn[data-lang="ar"]').classList.remove('active');
+}
   </script>
 </body>
 
