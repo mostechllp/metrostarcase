@@ -432,16 +432,16 @@ body {
 }
 .doctor-specialty-tag {
   display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.68rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--maroon);
   background: var(--rose-pale);
   padding: 4px 10px;
-  border-radius: 20px;
-  margin-bottom: 8px;
+  border-radius: 999px;
 }
+
 .doctor-name {
   font-size: 1.05rem;
   font-weight: 600;
@@ -452,6 +452,25 @@ body {
   font-size: 0.78rem;
   color: var(--text-soft);
   margin-bottom: 14px;
+}
+.doctor-exp {
+  font-size: 0.78rem;
+  color: #6b7280; /* soft gray */
+  margin-top: 4px;
+  font-weight: 500;
+}
+.doctor-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* KEY CHANGE */
+  margin-bottom: 8px;
+}
+
+
+.doctor-exp {
+  font-size: 0.72rem;
+  color: #9ca3af; /* lighter = less visual tension */
+  font-weight: 500;
 }
 .doctor-card-footer {
   display: flex;
