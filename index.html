@@ -1025,6 +1025,7 @@
       border-radius: 12px;
     }
 
+    /* Add to existing styles */
     @media (max-width: 1024px) {
       .testimonial-card {
         flex: 0 0 calc(50% - 15px);
@@ -1035,6 +1036,14 @@
       .testimonial-card {
         flex: 0 0 100%;
       }
+    }
+
+    /* Ensure smooth infinite sliding */
+    .testimonials-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      gap: 30px;
+      will-change: transform;
     }
   </style>
 </head>
@@ -1309,23 +1318,26 @@
       <div style="text-align:center; margin-top:40px;"><a href="services.html" class="btn btn-primary">View All Services</a></div>
     </div>
   </section>
-
-  <!-- ★ NEW: CHAIRMAN'S MESSAGE SECTION (positioned after services) ★ -->
+  <!-- CHAIRMAN'S MESSAGE SECTION with sticky image -->
   <section class="chairman-section fade-up">
     <div class="chairman-wrap">
-      <div class="chairman-image">
+      <div class="chairman-image" style="position: sticky; top: 100px; align-self: flex-start;">
         <img src="https://www.metromedicalgroup.com/assets/img/team/chairman.jpg" alt="Chairman Mustafa Hamza" onerror="this.style.display='none'">
+        <div class="chairman-sign" style="margin-top: 16px; text-align: center; border-top: none; padding-top: 0;">
+          <div class="name">Mustafa Hamza</div>
+          <div class="title">Group Chairman & CEO – Metro Medical Group (Kuwait/UAE)</div>
+        </div>
       </div>
       <div class="chairman-content">
         <div class="section-sub">Leadership</div>
         <h2 class="section-title">Chairman's Message</h2>
-        <div class="chairman-message" id="chairmanMessage">
+        <div class="chairman-message" id="chairmanMessage" style="text-align: justify;">
           <div class="message-short">
-            <p>We have arranged our Healthcare providing specialized centers from Metro Medical Group with a concept that anyone who enters the center will feel that they have reached a star level ambience and receive a premium quality healthcare along with our unique concept of patient escort since the beginning. Our doctors, medical and paramedical staff could be defined as handpicked, especially our doctors where some of them are having more than 40 years’ experience in their noble field of providing healthcare services and treatments to the society with a dedicated attitude.</p>
+            <p>We have arranged our Healthcare providing specialized centers from Metro Medical Group with a concept that anyone who enters the center will feel that they have reached a star level ambience and receive a premium quality healthcare along with our unique concept of patient escort since the beginning. Our doctors, medical and paramedical staff could be defined as handpicked, especially our doctors where some of them are having more than 40 years' experience in their noble field of providing healthcare services and treatments to the society with a dedicated attitude.</p>
           </div>
           <div class="message-full">
             <p>We have arranged our Healthcare providing specialized centers from Metro Medical Group with a concept that anyone who enters the center will feel that they have reached a star level ambience and receive a premium quality healthcare along with our unique concept of patient escort since the beginning.</p>
-            <p>Our doctors, medical and paramedical staff could be defined as handpicked, especially our doctors where some of them are having more than 40 years’ experience in their noble field of providing healthcare services and treatments to the society with a dedicated attitude.</p>
+            <p>Our doctors, medical and paramedical staff could be defined as handpicked, especially our doctors where some of them are having more than 40 years' experience in their noble field of providing healthcare services and treatments to the society with a dedicated attitude.</p>
             <p>All set to become a landmark in the field of medical care, Metro Medical Group has gone leaps and bounds to deliver its mission of bringing quality healthcare services for all. The team of our expert medical professionals will constantly endeavor to provide accessible, affordable and best available healthcare services in Kuwait with the available facilities in its best with us. Since its commencement, Metro Medical Group is always in this sector with noble thoughts and services.</p>
             <p>Great ideologies have greater responsibilities and the goals in healthcare are to safeguard, encourage and Metro Medical Group has become a name that spells assurance for the well-being of the patients. We are committed to make available to the public the benefits of the most modern and technological developments in the field which are a blend of technology along with impeccable patient care. This is where we planned to start our unit of Day care surgeries in our Super Metro Specialized Medical Center in Salmiya. Also we enhanced our services by adding MRI, CT and DEXA Scans in our different branches.</p>
             <p>With a career in this spanning over several years, I stand here grateful to the almighty, despite being from a humble background, I met a few gracious souls who guided me in my journey of life. My parents solicited inspiration and taught me the value of discipline, perseverance and a regulated life.</p>
@@ -1333,60 +1345,25 @@
           </div>
           <button class="read-more-btn" id="readMoreBtn">Read More <span>↓</span></button>
         </div>
-        <div class="chairman-sign">
-          <div class="name">Mustafa Hamza</div>
-          <div class="title">Group Chairman & CEO – Metro Medical Group (Kuwait/UAE)</div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- DOCTORS PREVIEW  -->
-  <section style="padding:88px 0; background:var(--off-white);">
+  <!-- DOCTORS PREVIEW with Sliding Carousel -->
+  <section style="padding:88px 0; background:var(--off-white); overflow: hidden;">
     <div class="section" style="padding:0 32px;">
       <div class="flex-between" style="margin-bottom:48px;flex-wrap:wrap;gap:20px;">
         <div>
           <div class="section-sub">Our Specialists</div>
           <h2 class="section-title">Meet Our Expert Team<br>of Doctors</h2>
-        </div><a href="doctors.html" class="btn btn-outline">View All Doctors</a>
+        </div>
+        <a href="doctors.html" class="btn btn-outline">View All Doctors</a>
       </div>
-      <div class="doctors-preview">
-        <div class="doctor-card fade-up">
-          <div class="director-badge">⭐ Medical Director</div>
-          <div class="doctor-img-wrap"><img class="rasna-img" src="home_docs/rasna_munaifa.png" alt="Dr. Rasna" onerror="this.style.display='none'"></div>
-          <div class="doctor-info"><span class="doctor-specialty-tag">General Practice</span>
-            <div class="doctor-name">Dr. Rasna Munaifa Koroth</div>
-            <div class="doctor-deg">MBBS · Medical Director</div>
-            <div class="doctor-card-footer"><a href="doctor-profile.html?id=rasna" class="btn btn-outline" style="padding:8px 16px;font-size:0.78rem;">Profile</a><a href="contact.html" class="btn btn-primary" style="padding:8px 16px;font-size:0.78rem;">Book</a></div>
-          </div>
+      <div class="doctors-slider" style="position: relative; margin-top: 24px;">
+        <div class="doctors-track" id="doctorsTrack" style="display: flex; transition: transform 0.5s ease; gap: 24px;">
+          <!-- Doctors will be loaded dynamically -->
         </div>
-        <div class="doctor-card fade-up">
-          <div class="doctor-img-wrap"><img src="home_docs/nidhin_k_padmanabhan.png" alt="Dr. Nidhin K Padmanabhan"></div>
-          <div class="doctor-info">
-            <div class="doctor-top-meta"><span class="doctor-specialty-tag">General Practice</span><span class="doctor-exp">13+ yrs exp</span></div>
-            <div class="doctor-name">Dr. Nidhin K Padmanabhan</div>
-            <div class="doctor-deg">MBBS, MS · Specialist Orthopedics</div>
-            <div class="doctor-card-footer"><a href="doctor-profile.html?id=nidhin" class="btn btn-outline">Profile</a><a href="contact.html" class="btn btn-primary">Book</a></div>
-          </div>
-        </div>
-        <div class="doctor-card fade-up">
-          <div class="doctor-img-wrap"><img src="home_docs/sandya_subashchandran.png" alt="Dr. Sandhya Subhashchandran"></div>
-          <div class="doctor-info">
-            <div class="doctor-top-meta"><span class="doctor-specialty-tag">Gynaecology</span><span class="doctor-exp">22+ yrs exp</span></div>
-            <div class="doctor-name">Dr. Sandhya Subhashchandran</div>
-            <div class="doctor-deg">MBBS, MD · Specialist Gynaecologist</div>
-            <div class="doctor-card-footer"><a href="doctor-profile.html?id=sandhya" class="btn btn-outline">Profile</a><a href="contact.html" class="btn btn-primary">Book</a></div>
-          </div>
-        </div>
-        <div class="doctor-card fade-up">
-          <div class="doctor-img-wrap"><img src="home_docs/ali_akbar_abdul_salam.png" alt="Dr. Ali Akbar"></div>
-          <div class="doctor-info">
-            <div class="doctor-top-meta"><span class="doctor-specialty-tag">ENT</span><span class="doctor-exp">24+ yrs exp</span></div>
-            <div class="doctor-name">Dr. Ali Akbar</div>
-            <div class="doctor-deg">MBBS, MS · Specialist ENT</div>
-            <div class="doctor-card-footer"><a href="doctor-profile.html?id=ali" class="btn btn-outline">Profile</a><a href="contact.html" class="btn btn-primary">Book</a></div>
-          </div>
-        </div>
+        <div class="doctors-dots" id="doctorsDots" style="display: flex; justify-content: center; gap: 12px; margin-top: 40px;"></div>
       </div>
     </div>
   </section>
@@ -1602,7 +1579,289 @@
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // Mobile menu toggle with overlay
+    // Doctors Slider - Infinite Circular Slider
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Find the doctors preview section and hide it
+  const originalDoctorsSection = document.querySelector('.doctors-preview');
+  if (originalDoctorsSection) {
+    originalDoctorsSection.style.display = 'none';
+  }
+
+  function createSliderAfterHeading(parentSection) {
+    const flexBetween = parentSection.querySelector('.flex-between');
+
+    const sliderHTML = `
+      <div class="doctors-slider-container" style="position: relative; margin-top: 48px; overflow: hidden; padding: 0 20px;">
+        <div class="doctors-slider-track" id="doctorsSliderTrack" style="display: flex; transition: transform 0.5s ease; gap: 24px;">
+          <!-- Doctors will be loaded dynamically -->
+        </div>
+        <div class="doctors-slider-dots" id="doctorsSliderDots" style="display: flex; justify-content: center; gap: 12px; margin-top: 40px;"></div>
+      </div>
+    `;
+
+    if (flexBetween) {
+      flexBetween.insertAdjacentHTML('afterend', sliderHTML);
+    } else {
+      parentSection.insertAdjacentHTML('beforeend', sliderHTML);
+    }
+  }
+
+  const specialistHeading = Array.from(document.querySelectorAll('.section-sub')).find(el => el.textContent.includes('Our Specialists'));
+  if (specialistHeading) {
+    const parentSection = specialistHeading.closest('section');
+    if (parentSection) {
+      createSliderAfterHeading(parentSection);
+    }
+  }
+
+  // Fetch doctors from doctors.html
+  async function fetchAllDoctors() {
+    try {
+      const response = await fetch('doctors.html');
+      if (!response.ok) throw new Error('Failed to fetch doctors.html');
+      const html = await response.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+
+      const doctorCards = doc.querySelectorAll('.doctor-card-v2');
+      const doctorsData = [];
+
+      doctorCards.forEach((card) => {
+        const img = card.querySelector('.photo img');
+        let imgSrc = img ? img.src : '';
+        const specialty = card.querySelector('.spec-tag');
+        const name = card.querySelector('.name');
+        const deg = card.querySelector('.deg');
+        const expSpan = card.querySelector('.exp');
+        const profileLink = card.querySelector('.card-btn-outline');
+        const bookLink = card.querySelector('.card-btn-fill');
+
+        if (name && specialty) {
+          doctorsData.push({
+            imgSrc: imgSrc,
+            specialty: specialty.textContent,
+            name: name.textContent,
+            deg: deg ? deg.textContent : '',
+            exp: expSpan ? expSpan.textContent : '',
+            profileHref: profileLink ? profileLink.getAttribute('href') : 'doctor-profile.html',
+            bookHref: bookLink ? bookLink.getAttribute('href') : 'contact.html'
+          });
+        }
+      });
+
+      return doctorsData;
+    } catch (error) {
+      console.error('Error fetching doctors:', error);
+      return [];
+    }
+  }
+
+  const existingDoctors = [{
+      imgSrc: 'home_docs/rasna_munaifa_.png',
+      specialty: 'General Practice',
+      name: 'Dr. Rasna Munaifa Koroth',
+      deg: 'MBBS · Medical Director',
+      exp: '',
+      profileHref: 'doctor-profile.html?id=rasna',
+      bookHref: 'contact.html',
+      isDirector: true
+    },
+    {
+      imgSrc: 'doctors/nidhin_k_padmanabhan.png',
+      specialty: 'Orthopedics',
+      name: 'Dr. Nidhin K Padmanabhan',
+      deg: 'MBBS, MS · Specialist Orthopedics',
+      exp: '13+ yrs exp',
+      profileHref: 'doctor-profile.html?id=nidhin',
+      bookHref: 'contact.html'
+    },
+    {
+      imgSrc: 'doctors/sandya_subashchandran.png',
+      specialty: 'Gynaecology',
+      name: 'Dr. Sandhya Subhashchandran',
+      deg: 'MBBS, MD · Specialist Gynaecologist',
+      exp: '22+ yrs exp',
+      profileHref: 'doctor-profile.html?id=sandhya',
+      bookHref: 'contact.html'
+    },
+    {
+      imgSrc: 'doctors/ali_akbar_abdul_salam.png',
+      specialty: 'ENT',
+      name: 'Dr. Ali Akbar',
+      deg: 'MBBS, MS · Specialist ENT',
+      exp: '24+ yrs exp',
+      profileHref: 'doctor-profile.html?id=ali',
+      bookHref: 'contact.html'
+    }
+  ];
+
+  async function getAllDoctors() {
+    const fetchedDoctors = await fetchAllDoctors();
+    const allDoctors = [...existingDoctors];
+    const existingNames = new Set(existingDoctors.map(d => d.name));
+
+    for (const doc of fetchedDoctors) {
+      if (!existingNames.has(doc.name)) {
+        allDoctors.push(doc);
+        existingNames.add(doc.name);
+      }
+    }
+    return allDoctors;
+  }
+
+  let currentIndex = 0;
+  let autoInterval;
+  let track, dotsContainer;
+  let allCards = [];
+  let originalLength = 0;
+
+  function updateSlider() {
+    if (!track || allCards.length === 0) return;
+    const cardWidth = allCards[0].offsetWidth;
+    const gap = 24;
+    const translateX = -(currentIndex * (cardWidth + gap));
+    track.style.transform = `translateX(${translateX}px)`;
+
+    // Update dots
+    if (dotsContainer) {
+      const dots = dotsContainer.querySelectorAll('.dot-indicator');
+      const activeIndex = currentIndex % originalLength;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === activeIndex);
+      });
+    }
+  }
+
+  function startAutoSlide() {
+    if (autoInterval) clearInterval(autoInterval);
+    autoInterval = setInterval(() => {
+      currentIndex++;
+      updateSlider();
+      
+      // Reset to beginning when reaching cloned items (infinite loop)
+      if (currentIndex >= originalLength) {
+        setTimeout(() => {
+          track.style.transition = 'none';
+          currentIndex = currentIndex - originalLength;
+          updateSlider();
+          setTimeout(() => {
+            track.style.transition = 'transform 0.5s ease';
+          }, 50);
+        }, 500);
+      }
+    }, 4000);
+  }
+
+  function createInfiniteSlider(doctors) {
+    track = document.getElementById('doctorsSliderTrack');
+    dotsContainer = document.getElementById('doctorsSliderDots');
+    if (!track) return;
+
+    track.innerHTML = '';
+    originalLength = doctors.length;
+
+    // Create original cards
+    doctors.forEach((doctor, idx) => {
+      const card = document.createElement('div');
+      card.className = 'doctor-card';
+      card.style.flex = '0 0 auto';
+      card.style.width = '280px';
+      card.style.maxWidth = '100%';
+
+      if (window.innerWidth <= 1024) card.style.width = '260px';
+      if (window.innerWidth <= 768) card.style.width = '280px';
+
+      card.innerHTML = `
+        ${doctor.isDirector ? '<div class="director-badge">⭐ Medical Director</div>' : ''}
+        <div class="doctor-img-wrap" style="height: 220px;">
+          <img src="${doctor.imgSrc}" alt="${doctor.name}" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(160deg, #F2D9E6, #E8C4D4)';">
+        </div>
+        <div class="doctor-info" style="padding: 16px 18px 20px;">
+          <div class="doctor-top-meta">
+            <span class="doctor-specialty-tag" style="font-size: 0.65rem;">${doctor.specialty}</span>
+            ${doctor.exp ? `<span class="doctor-exp" style="font-size: 0.7rem;">${doctor.exp}</span>` : ''}
+          </div>
+          <div class="doctor-name" style="font-size: 0.95rem; margin-bottom: 4px;">${doctor.name}</div>
+          <div class="doctor-deg" style="font-size: 0.72rem; margin-bottom: 12px;">${doctor.deg}</div>
+          <div class="doctor-card-footer" style="gap: 8px;">
+            <a href="${doctor.profileHref}" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.72rem;">Profile</a>
+            <a href="${doctor.bookHref}" class="btn btn-primary" style="padding: 6px 12px; font-size: 0.72rem;">Book</a>
+          </div>
+        </div>
+      `;
+      track.appendChild(card);
+    });
+
+    // Duplicate all cards for infinite loop
+    const originalCards = Array.from(track.querySelectorAll('.doctor-card'));
+    originalCards.forEach(card => {
+      const clone = card.cloneNode(true);
+      track.appendChild(clone);
+    });
+
+    allCards = Array.from(track.querySelectorAll('.doctor-card'));
+
+    // Create dots
+    if (dotsContainer) {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < doctors.length; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot-indicator');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          updateSlider();
+          if (autoInterval) {
+            clearInterval(autoInterval);
+            startAutoSlide();
+          }
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    // Start from first card - position at left edge
+    currentIndex = 0;
+    setTimeout(() => {
+      if (track && allCards.length > 0) {
+        track.style.transition = 'none';
+        updateSlider();
+        setTimeout(() => {
+          track.style.transition = 'transform 0.5s ease';
+          startAutoSlide();
+        }, 100);
+      }
+    }, 100);
+
+    // Handle window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        const cards = track.querySelectorAll('.doctor-card');
+        let newWidth = '280px';
+        if (window.innerWidth <= 1024) newWidth = '260px';
+        if (window.innerWidth <= 768) newWidth = '280px';
+        cards.forEach(card => {
+          card.style.width = newWidth;
+        });
+        track.style.transition = 'none';
+        updateSlider();
+        setTimeout(() => {
+          track.style.transition = 'transform 0.5s ease';
+        }, 50);
+      }, 250);
+    });
+  }
+
+  getAllDoctors().then(doctors => {
+    if (doctors.length > 0) {
+      createInfiniteSlider(doctors);
+    }
+  });
+});
+
     // Mobile menu toggle with overlay
     function toggleMenu() {
       const navLinks = document.getElementById("navLinks");
@@ -1701,45 +1960,79 @@
     }
 
     // Auto-sliding testimonials
+    // Auto-sliding testimonials with infinite loop
     const track = document.getElementById('testimonialsTrack');
     const dotsContainer = document.getElementById('sliderDots');
-    const cards = Array.from(document.querySelectorAll('.testimonial-card'));
+    let cards = Array.from(document.querySelectorAll('.testimonial-card'));
     let currentIndex = 0;
     let autoInterval;
 
+    // Duplicate cards for infinite effect
+    function duplicateForInfinite() {
+      if (!track) return;
+      const originalCards = [...cards];
+      originalCards.forEach(card => {
+        const clone = card.cloneNode(true);
+        track.appendChild(clone);
+      });
+      cards = Array.from(track.querySelectorAll('.testimonial-card'));
+    }
+
     function updateSlider() {
-      const cardWidth = cards[0]?.offsetWidth + 30; // gap 30px
-      if (track && cardWidth) track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+      if (!track || cards.length === 0) return;
+      const cardWidth = cards[0]?.offsetWidth + 30;
+      if (cardWidth) {
+        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+      }
+
+      // Reset to beginning when reaching cloned items
+      const originalLength = cards.length / 2;
+      if (currentIndex >= originalLength) {
+        setTimeout(() => {
+          track.style.transition = 'none';
+          currentIndex = currentIndex - originalLength;
+          track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+          setTimeout(() => {
+            track.style.transition = 'transform 0.5s ease';
+          }, 50);
+        }, 500);
+      }
+
       if (dotsContainer) {
         const dots = dotsContainer.querySelectorAll('.dot-indicator');
-        dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+        const activeDotIndex = currentIndex % originalLength;
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === activeDotIndex));
       }
     }
 
     function createDots() {
       if (!dotsContainer) return;
       dotsContainer.innerHTML = '';
-      cards.forEach((_, idx) => {
+      const originalLength = cards.length / 2;
+      for (let i = 0; i < originalLength; i++) {
         const dot = document.createElement('div');
         dot.classList.add('dot-indicator');
-        if (idx === currentIndex) dot.classList.add('active');
+        if (i === 0) dot.classList.add('active');
         dot.addEventListener('click', () => {
-          currentIndex = idx;
+          currentIndex = i;
           updateSlider();
           resetAutoSlide();
         });
         dotsContainer.appendChild(dot);
-      });
+      }
     }
 
     function resetAutoSlide() {
       if (autoInterval) clearInterval(autoInterval);
       autoInterval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % cards.length;
+        currentIndex++;
         updateSlider();
       }, 4000);
     }
+
     if (cards.length > 0) {
+      duplicateForInfinite();
+      cards = Array.from(track.querySelectorAll('.testimonial-card'));
       createDots();
       updateSlider();
       resetAutoSlide();
