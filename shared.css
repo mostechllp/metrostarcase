@@ -107,7 +107,7 @@ body {
   display: flex;
   flex-direction: column;
   line-height: 1.2;
-  margin-right: 10px
+  margin-right: 10px;
 }
 .nav-logo-text .brand {
   font-size: 1.1rem;
@@ -129,7 +129,7 @@ body {
 }
 .nav-links a {
   text-decoration: none;
-  font-size: 0.80rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-mid);
   letter-spacing: 0.04em;
@@ -170,7 +170,7 @@ body {
   color: white;
   padding: 8px 18px;
   border-radius: 40px;
-  font-size: 0.70rem;
+  font-size: 0.7rem;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -466,7 +466,6 @@ body {
   justify-content: space-between; /* KEY CHANGE */
   margin-bottom: 8px;
 }
-
 
 .doctor-exp {
   font-size: 0.72rem;
@@ -893,7 +892,7 @@ footer {
   font-size: 20px;
   text-decoration: none;
   z-index: 999;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: all 0.25s ease;
 }
 
@@ -925,7 +924,7 @@ footer {
 }
 .call-float:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 .call-float::after {
@@ -972,13 +971,13 @@ footer {
 /* Call */
 .call-float {
   bottom: 90px; /* stacked above */
-  background: #8B1A4A;
+  background: #8b1a4a;
 }
 
 /* Scroll to top */
 .scroll-top {
   bottom: 160px;
-  background: #8B1A4A;
+  background: #8b1a4a;
 }
 
 /* Hover */
@@ -1037,83 +1036,235 @@ body.rtl .nav-lang-switch {
   margin-left: 0;
   margin-right: 12px;
 }
-
 /* Mobile Styles */
 @media (max-width: 900px) {
   .nav-logo-text {
     display: none;
   }
-  
-  .navbar .nav-inner {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 20px;
-  }
-  
-  .nav-logo {
-    position: static;
-    transform: none;
-    order: 1;
-    display: flex;
-    align-items: center;
-  }
-  
-  .nav-logo img {
-    height: 40px;
-    width: auto;
-  }
-  
+
   .hamburger {
-    position: static;
-    transform: none;
-    order: 3;
     display: flex !important;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
-    padding: 8px;
+    z-index: 1003;
+    position: relative;
   }
-  
+
   .hamburger span {
     width: 24px;
     height: 2px;
     background: var(--text-dark);
     display: block;
     transition: all 0.3s ease;
+    border-radius: 2px;
   }
-  
-  /* Language switch - positioned between logo and hamburger */
-  .nav-lang-switch {
-    position: static;
-    order: 2;
-    background: white;
-    border: 1px solid var(--border);
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background: var(--maroon);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    background: var(--maroon);
+  }
+
+  /* Hide desktop elements */
+  .nav-emergency {
+    display: none;
+  }
+
+  .nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Mobile Menu - Slide from Right */
+  .nav-links {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    left: auto !important;
+    width: 280px !important;
+    height: 100vh !important;
+    background: #ffffff !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    padding: 100px 24px 30px !important;
+    margin: 0 !important;
+    gap: 0 !important;
+    transition: right 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1) !important;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2) !important;
+    z-index: 1002 !important;
+    border-left: 4px solid var(--maroon) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    display: flex !important;
+    overflow-y: auto !important;
+    visibility: visible !important;
+  }
+
+  .nav-links.active {
+    right: 0 !important;
+  }
+
+  /* Menu items styling */
+  .nav-links li {
+    width: 100% !important;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+    transition-delay: calc(0.05s * var(--i, 0));
+    list-style: none !important;
+    border-bottom: 1px solid rgba(139, 26, 74, 0.1);
+  }
+
+  .nav-links.active li {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+
+  .nav-links a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 16px 0 !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    color: var(--maroon-dark) !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+    position: relative !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .nav-links a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--maroon);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::before,
+  .nav-links a.active::before {
+    width: 30px;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--maroon) !important;
+    padding-left: 8px !important;
+  }
+
+  /* Arrow indicator on hover */
+  .nav-links a::after {
+    content: "→";
+    opacity: 0;
+    font-size: 0.85rem;
+    transition: all 0.25s ease;
+    color: var(--maroon-light);
+  }
+
+  .nav-links a:hover::after {
+    opacity: 1;
+    transform: translateX(4px);
+  }
+
+  /* Menu header indicator */
+  .nav-links::before {
+    content: "MENU";
+    position: absolute;
+    top: 28px;
+    left: 24px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--maroon);
+    background: rgba(139, 26, 74, 0.1);
     padding: 5px 12px;
-    margin: 0;
-    z-index: 1001;
-    border-radius: 30px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    z-index: 10;
   }
-  
-  /* Ensure active button is clearly visible on mobile */
+
+  /* Language switch - INSIDE the menu panel at the bottom */
+  .nav-lang-switch {
+    position: absolute !important;
+    bottom: 15px !important;
+    right: 120px !important;
+    transform: none !important;
+    background: white !important;
+    border: 1px solid var(--border) !important;
+    padding: 10px 16px !important;
+    border-radius: 40px !important;
+    z-index: 10 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+    display: flex !important;
+    gap: 12px !important;
+    margin: 0 !important;
+    width: auto !important;
+    justify-content: center;
+  }
+
+  /* Scrollbar styling */
+  .nav-links::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .nav-links::-webkit-scrollbar-track {
+    background: var(--rose-pale);
+  }
+
+  .nav-links::-webkit-scrollbar-thumb {
+    background: var(--maroon-light);
+    border-radius: 4px;
+  }
+
+  /* Active link styling */
+  .nav-links a.active {
+    color: var(--maroon) !important;
+    font-weight: 600 !important;
+  }
+
+  .nav-links a.active::before {
+    width: 30px !important;
+  }
+
+  /* Language buttons */
   .lang-btn {
-    font-size: 0.8rem;
-    padding: 4px 10px;
+    font-size: 0.85rem;
+    padding: 6px 16px;
+    border-radius: 30px;
   }
-  
+
   .lang-btn.active {
     background: var(--maroon);
     color: white;
     box-shadow: none;
-    font-weight: 600;
   }
-  
+
   .lang-btn.active:hover {
     background: var(--maroon-dark);
   }
-  
+
+  /* Ensure body doesn't scroll when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+
   /* For RTL, the order remains the same since it's flexbox */
   body.rtl .nav-lang-switch {
     position: static;
@@ -1121,15 +1272,15 @@ body.rtl .nav-lang-switch {
     left: auto;
     margin: 0;
   }
-  
+
   body.rtl .nav-logo {
     order: 3;
   }
-  
+
   body.rtl .hamburger {
     order: 1;
   }
-  
+
   body.rtl .nav-lang-switch {
     order: 2;
   }
@@ -1140,12 +1291,12 @@ body.rtl .nav-lang-switch {
   .nav-lang-switch {
     padding: 4px 8px;
   }
-  
+
   .lang-btn {
     padding: 4px 8px;
     font-size: 0.75rem;
   }
-  
+
   .lang-divider {
     font-size: 0.7rem;
   }
