@@ -990,6 +990,28 @@
       font-style: italic;
     }
 
+    .testimonial-text a {
+      position: relative;
+      text-decoration: none;
+      color: var(--maroon-light);
+      font-size: 0.85rem;
+    }
+
+    .testimonial-text a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background-color: var(--maroon-light);
+      transition: width 0.3s ease;
+    }
+
+    .testimonial-text a:hover::after {
+      width: 100%;
+    }
+
     .testimonial-author {
       font-weight: 700;
       color: var(--maroon);
@@ -1166,8 +1188,8 @@
             <polyline points="22 4 12 14.01 9 11.01" />
           </svg></div>
         <div class="why-text">
-          <h4>JCI-Standard Care</h4>
-          <p>Treatments and processes matching global healthcare accreditation standards.</p>
+          <h4>Affordable Care</h4>
+          <p>Quality healthcare at prices you can afford.</p>
         </div>
       </div>
       <div class="why-item fade-up" style="transition-delay:0.1s">
@@ -1191,7 +1213,7 @@
           </svg></div>
         <div class="why-text">
           <h4>Easy Appointments</h4>
-          <p>Book your visit quickly — walk-ins and emergency care always welcome.</p>
+          <p>Book your visit quickly — walk-ins always welcome.</p>
         </div>
       </div>
       <div class="why-item fade-up" style="transition-delay:0.3s">
@@ -1200,7 +1222,7 @@
           </svg></div>
         <div class="why-text">
           <h4>Patient-Centric</h4>
-          <p>Compassionate care tailored to every individual and family.</p>
+          <p>Compassionate care tailored to every individual.</p>
         </div>
       </div>
     </div>
@@ -1380,33 +1402,39 @@
         <div class="testimonials-track" id="testimonialsTrack">
           <div class="testimonial-card">
             <div class="testimonial-quote">“</div>
-            <div class="testimonial-text">Exceptional care and warm environment. The doctors took time to explain everything. Truly a premium healthcare experience.</div>
-            <div class="testimonial-author">Sarah Ahmed</div>
-            <div class="testimonial-role">Sharjah</div>
+            <div class="testimonial-text">I had a very positive experience at Star Care Health Center. The service was professional, well-organized, and patient-friendly from start to finish. <a href="https://maps.app.goo.gl/RnPTj5BTCodhkW5E6">Read More</a></div>
+            <div class="testimonial-author">Arun Kumar</div>
+            <div class="testimonial-role">6 days ago</div>
           </div>
           <div class="testimonial-card">
             <div class="testimonial-quote">“</div>
-            <div class="testimonial-text">Metro Starcare's team is incredibly professional. I felt safe and well-cared for during my treatment. Highly recommended!</div>
-            <div class="testimonial-author">Mohamed Al Hosani</div>
-            <div class="testimonial-role">Abu Dhabi</div>
+            <div class="testimonial-text">Very Good Service from Ms Noreen and Mr Aamir.Star metro is lucky to have such Professionals to serve Patients.Thanks a lot.</div>
+            <div class="testimonial-author">Abdul Nawa</div>
+            <div class="testimonial-role">a week ago</div>
           </div>
           <div class="testimonial-card">
             <div class="testimonial-quote">“</div>
-            <div class="testimonial-text">The staff goes above and beyond. From the front desk to the specialists, everything is smooth and patient-focused.</div>
-            <div class="testimonial-author">Fatima K.</div>
-            <div class="testimonial-role">Dubai</div>
+            <div class="testimonial-text">For us this is the best medical centre. In providing services and giving advise. It's a common man's best medical centre with most of the specialist and facilities. Love it.</div>
+            <div class="testimonial-author">Jaipal Reddy</div>
+            <div class="testimonial-role">2 weeks ago</div>
           </div>
           <div class="testimonial-card">
             <div class="testimonial-quote">“</div>
-            <div class="testimonial-text">I’ve been coming here for years. The doctors are experienced, and the facility is spotless. Best medical centre in the area.</div>
-            <div class="testimonial-author">Rashid Nasser</div>
-            <div class="testimonial-role">Ajman</div>
+            <div class="testimonial-text">Starcare Clinic has always been our trusted clinic for regular checkups. The environment is clean and well-managed. <a href="https://maps.app.goo.gl/vAYEv1bzPvfe4x8DA"> Read more</a></div>
+            <div class="testimonial-author">Chanda Lakhwani</div>
+            <div class="testimonial-role">4 weeks ago</div>
           </div>
           <div class="testimonial-card">
             <div class="testimonial-quote">“</div>
-            <div class="testimonial-text">Amazing gynecology department. Dr. Sandhya is so kind and knowledgeable. Thank you for the excellent service.</div>
-            <div class="testimonial-author">Layla E.</div>
-            <div class="testimonial-role">Ras Al Khaimah</div>
+            <div class="testimonial-text">I am very satisfied with the hospital service. The staff were polite, helpful, and professional, and the medical care was excellent. Clean environment and well-managed service. Highly recommended.</div>
+            <div class="testimonial-author">Renu Ratheesh</div>
+            <div class="testimonial-role">a month ago</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">“</div>
+            <div class="testimonial-text">This is an amazing clinic with very kind and friendly staff. The doctors are caring and treat patients with respect and compassion. I am very grateful, especially to Dr. Sandiya. <a href="https://maps.app.goo.gl/9tfGGEMJ9m9ZoPfaA">Read more</a></div>
+            <div class="testimonial-author">Renu Ratheesh</div>
+            <div class="testimonial-role">a month ago</div>
           </div>
         </div>
       </div>
@@ -1580,18 +1608,18 @@
     });
 
     // Doctors Slider - Infinite Circular Slider
-document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
 
-  // Find the doctors preview section and hide it
-  const originalDoctorsSection = document.querySelector('.doctors-preview');
-  if (originalDoctorsSection) {
-    originalDoctorsSection.style.display = 'none';
-  }
+      // Find the doctors preview section and hide it
+      const originalDoctorsSection = document.querySelector('.doctors-preview');
+      if (originalDoctorsSection) {
+        originalDoctorsSection.style.display = 'none';
+      }
 
-  function createSliderAfterHeading(parentSection) {
-    const flexBetween = parentSection.querySelector('.flex-between');
+      function createSliderAfterHeading(parentSection) {
+        const flexBetween = parentSection.querySelector('.flex-between');
 
-    const sliderHTML = `
+        const sliderHTML = `
       <div class="doctors-slider-container" style="position: relative; margin-top: 48px; overflow: hidden; padding: 0 20px;">
         <div class="doctors-slider-track" id="doctorsSliderTrack" style="display: flex; transition: transform 0.5s ease; gap: 24px;">
           <!-- Doctors will be loaded dynamically -->
@@ -1600,267 +1628,267 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     `;
 
-    if (flexBetween) {
-      flexBetween.insertAdjacentHTML('afterend', sliderHTML);
-    } else {
-      parentSection.insertAdjacentHTML('beforeend', sliderHTML);
-    }
-  }
+        if (flexBetween) {
+          flexBetween.insertAdjacentHTML('afterend', sliderHTML);
+        } else {
+          parentSection.insertAdjacentHTML('beforeend', sliderHTML);
+        }
+      }
 
-  const specialistHeading = Array.from(document.querySelectorAll('.section-sub')).find(el => el.textContent.includes('Our Specialists'));
-  if (specialistHeading) {
-    const parentSection = specialistHeading.closest('section');
-    if (parentSection) {
-      createSliderAfterHeading(parentSection);
-    }
-  }
+      const specialistHeading = Array.from(document.querySelectorAll('.section-sub')).find(el => el.textContent.includes('Our Specialists'));
+      if (specialistHeading) {
+        const parentSection = specialistHeading.closest('section');
+        if (parentSection) {
+          createSliderAfterHeading(parentSection);
+        }
+      }
 
-  // Fetch doctors from doctors.html
-  async function fetchAllDoctors() {
-    try {
-      const response = await fetch('doctors.html');
-      if (!response.ok) throw new Error('Failed to fetch doctors.html');
-      const html = await response.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
+      // Fetch doctors from doctors.html
+      async function fetchAllDoctors() {
+        try {
+          const response = await fetch('doctors.html');
+          if (!response.ok) throw new Error('Failed to fetch doctors.html');
+          const html = await response.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
 
-      const doctorCards = doc.querySelectorAll('.doctor-card-v2');
-      const doctorsData = [];
+          const doctorCards = doc.querySelectorAll('.doctor-card-v2');
+          const doctorsData = [];
 
-      doctorCards.forEach((card) => {
-        const img = card.querySelector('.photo img');
-        let imgSrc = img ? img.src : '';
-        const specialty = card.querySelector('.spec-tag');
-        const name = card.querySelector('.name');
-        const deg = card.querySelector('.deg');
-        const expSpan = card.querySelector('.exp');
-        const profileLink = card.querySelector('.card-btn-outline');
-        const bookLink = card.querySelector('.card-btn-fill');
+          doctorCards.forEach((card) => {
+            const img = card.querySelector('.photo img');
+            let imgSrc = img ? img.src : '';
+            const specialty = card.querySelector('.spec-tag');
+            const name = card.querySelector('.name');
+            const deg = card.querySelector('.deg');
+            const expSpan = card.querySelector('.exp-badge');
+            const profileLink = card.querySelector('.card-btn-outline');
+            const bookLink = card.querySelector('.card-btn-fill');
 
-        if (name && specialty) {
-          doctorsData.push({
-            imgSrc: imgSrc,
-            specialty: specialty.textContent,
-            name: name.textContent,
-            deg: deg ? deg.textContent : '',
-            exp: expSpan ? expSpan.textContent : '',
-            profileHref: profileLink ? profileLink.getAttribute('href') : 'doctor-profile.html',
-            bookHref: bookLink ? bookLink.getAttribute('href') : 'contact.html'
+            if (name && specialty) {
+              doctorsData.push({
+                imgSrc: imgSrc,
+                specialty: specialty.textContent,
+                name: name.textContent,
+                deg: deg ? deg.textContent : '',
+                exp: expSpan ? expSpan.textContent : '',
+                profileHref: profileLink ? profileLink.getAttribute('href') : 'doctor-profile.html',
+                bookHref: bookLink ? bookLink.getAttribute('href') : 'contact.html'
+              });
+            }
+          });
+
+          return doctorsData;
+        } catch (error) {
+          console.error('Error fetching doctors:', error);
+          return [];
+        }
+      }
+
+      const existingDoctors = [{
+          imgSrc: 'home_docs/rasna_munaifa_.png',
+          specialty: 'General Practice',
+          name: 'Dr. Rasna Munaifa Koroth',
+          deg: 'MBBS · Medical Director',
+          exp: 'Experienced',
+          profileHref: 'doctor-profile.html?id=rasna',
+          bookHref: 'contact.html',
+          isDirector: true
+        },
+        {
+          imgSrc: 'doctors/nidhin_k_padmanabhan.png',
+          specialty: 'Orthopedics',
+          name: 'Dr. Nidhin K Padmanabhan',
+          deg: 'MBBS, MS · Specialist Orthopedics',
+          exp: '13+ yrs exp',
+          profileHref: 'doctor-profile.html?id=nidhin',
+          bookHref: 'contact.html'
+        },
+        {
+          imgSrc: 'doctors/sandya_subashchandran.png',
+          specialty: 'Gynaecology',
+          name: 'Dr. Sandhya Subhashchandran',
+          deg: 'MBBS, MD · Specialist Gynaecologist',
+          exp: '22+ yrs exp',
+          profileHref: 'doctor-profile.html?id=sandhya',
+          bookHref: 'contact.html'
+        },
+        {
+          imgSrc: 'doctors/ali_akbar_abdul_salam.png',
+          specialty: 'ENT',
+          name: 'Dr. Ali Akbar',
+          deg: 'MBBS, MS · Specialist ENT',
+          exp: '24+ yrs exp',
+          profileHref: 'doctor-profile.html?id=ali',
+          bookHref: 'contact.html'
+        }
+      ];
+
+      async function getAllDoctors() {
+        const fetchedDoctors = await fetchAllDoctors();
+        const allDoctors = [...existingDoctors];
+        const existingNames = new Set(existingDoctors.map(d => d.name));
+
+        for (const doc of fetchedDoctors) {
+          if (!existingNames.has(doc.name)) {
+            allDoctors.push(doc);
+            existingNames.add(doc.name);
+          }
+        }
+        return allDoctors;
+      }
+
+      let currentIndex = 0;
+      let autoInterval;
+      let track, dotsContainer;
+      let allCards = [];
+      let originalLength = 0;
+
+      function updateSlider() {
+        if (!track || allCards.length === 0) return;
+        const cardWidth = allCards[0].offsetWidth;
+        const gap = 24;
+        const translateX = -(currentIndex * (cardWidth + gap));
+        track.style.transform = `translateX(${translateX}px)`;
+
+        // Update dots
+        if (dotsContainer) {
+          const dots = dotsContainer.querySelectorAll('.dot-indicator');
+          const activeIndex = currentIndex % originalLength;
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === activeIndex);
           });
         }
-      });
-
-      return doctorsData;
-    } catch (error) {
-      console.error('Error fetching doctors:', error);
-      return [];
-    }
-  }
-
-  const existingDoctors = [{
-      imgSrc: 'home_docs/rasna_munaifa_.png',
-      specialty: 'General Practice',
-      name: 'Dr. Rasna Munaifa Koroth',
-      deg: 'MBBS · Medical Director',
-      exp: '',
-      profileHref: 'doctor-profile.html?id=rasna',
-      bookHref: 'contact.html',
-      isDirector: true
-    },
-    {
-      imgSrc: 'doctors/nidhin_k_padmanabhan.png',
-      specialty: 'Orthopedics',
-      name: 'Dr. Nidhin K Padmanabhan',
-      deg: 'MBBS, MS · Specialist Orthopedics',
-      exp: '13+ yrs exp',
-      profileHref: 'doctor-profile.html?id=nidhin',
-      bookHref: 'contact.html'
-    },
-    {
-      imgSrc: 'doctors/sandya_subashchandran.png',
-      specialty: 'Gynaecology',
-      name: 'Dr. Sandhya Subhashchandran',
-      deg: 'MBBS, MD · Specialist Gynaecologist',
-      exp: '22+ yrs exp',
-      profileHref: 'doctor-profile.html?id=sandhya',
-      bookHref: 'contact.html'
-    },
-    {
-      imgSrc: 'doctors/ali_akbar_abdul_salam.png',
-      specialty: 'ENT',
-      name: 'Dr. Ali Akbar',
-      deg: 'MBBS, MS · Specialist ENT',
-      exp: '24+ yrs exp',
-      profileHref: 'doctor-profile.html?id=ali',
-      bookHref: 'contact.html'
-    }
-  ];
-
-  async function getAllDoctors() {
-    const fetchedDoctors = await fetchAllDoctors();
-    const allDoctors = [...existingDoctors];
-    const existingNames = new Set(existingDoctors.map(d => d.name));
-
-    for (const doc of fetchedDoctors) {
-      if (!existingNames.has(doc.name)) {
-        allDoctors.push(doc);
-        existingNames.add(doc.name);
       }
-    }
-    return allDoctors;
-  }
 
-  let currentIndex = 0;
-  let autoInterval;
-  let track, dotsContainer;
-  let allCards = [];
-  let originalLength = 0;
-
-  function updateSlider() {
-    if (!track || allCards.length === 0) return;
-    const cardWidth = allCards[0].offsetWidth;
-    const gap = 24;
-    const translateX = -(currentIndex * (cardWidth + gap));
-    track.style.transform = `translateX(${translateX}px)`;
-
-    // Update dots
-    if (dotsContainer) {
-      const dots = dotsContainer.querySelectorAll('.dot-indicator');
-      const activeIndex = currentIndex % originalLength;
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === activeIndex);
-      });
-    }
-  }
-
-  function startAutoSlide() {
-    if (autoInterval) clearInterval(autoInterval);
-    autoInterval = setInterval(() => {
-      currentIndex++;
-      updateSlider();
-      
-      // Reset to beginning when reaching cloned items (infinite loop)
-      if (currentIndex >= originalLength) {
-        setTimeout(() => {
-          track.style.transition = 'none';
-          currentIndex = currentIndex - originalLength;
+      function startAutoSlide() {
+        if (autoInterval) clearInterval(autoInterval);
+        autoInterval = setInterval(() => {
+          currentIndex++;
           updateSlider();
-          setTimeout(() => {
-            track.style.transition = 'transform 0.5s ease';
-          }, 50);
-        }, 500);
-      }
-    }, 4000);
-  }
 
-  function createInfiniteSlider(doctors) {
-    track = document.getElementById('doctorsSliderTrack');
-    dotsContainer = document.getElementById('doctorsSliderDots');
-    if (!track) return;
-
-    track.innerHTML = '';
-    originalLength = doctors.length;
-
-    // Create original cards
-    doctors.forEach((doctor, idx) => {
-      const card = document.createElement('div');
-      card.className = 'doctor-card';
-      card.style.flex = '0 0 auto';
-      card.style.width = '280px';
-      card.style.maxWidth = '100%';
-
-      if (window.innerWidth <= 1024) card.style.width = '260px';
-      if (window.innerWidth <= 768) card.style.width = '280px';
-
-      card.innerHTML = `
-        ${doctor.isDirector ? '<div class="director-badge">⭐ Medical Director</div>' : ''}
-        <div class="doctor-img-wrap" style="height: 220px;">
-          <img src="${doctor.imgSrc}" alt="${doctor.name}" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(160deg, #F2D9E6, #E8C4D4)';">
-        </div>
-        <div class="doctor-info" style="padding: 16px 18px 20px;">
-          <div class="doctor-top-meta">
-            <span class="doctor-specialty-tag" style="font-size: 0.65rem;">${doctor.specialty}</span>
-            ${doctor.exp ? `<span class="doctor-exp" style="font-size: 0.7rem;">${doctor.exp}</span>` : ''}
-          </div>
-          <div class="doctor-name" style="font-size: 0.95rem; margin-bottom: 4px;">${doctor.name}</div>
-          <div class="doctor-deg" style="font-size: 0.72rem; margin-bottom: 12px;">${doctor.deg}</div>
-          <div class="doctor-card-footer" style="gap: 8px;">
-            <a href="${doctor.profileHref}" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.72rem;">Profile</a>
-            <a href="${doctor.bookHref}" class="btn btn-primary" style="padding: 6px 12px; font-size: 0.72rem;">Book</a>
-          </div>
-        </div>
-      `;
-      track.appendChild(card);
-    });
-
-    // Duplicate all cards for infinite loop
-    const originalCards = Array.from(track.querySelectorAll('.doctor-card'));
-    originalCards.forEach(card => {
-      const clone = card.cloneNode(true);
-      track.appendChild(clone);
-    });
-
-    allCards = Array.from(track.querySelectorAll('.doctor-card'));
-
-    // Create dots
-    if (dotsContainer) {
-      dotsContainer.innerHTML = '';
-      for (let i = 0; i < doctors.length; i++) {
-        const dot = document.createElement('div');
-        dot.classList.add('dot-indicator');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-          currentIndex = i;
-          updateSlider();
-          if (autoInterval) {
-            clearInterval(autoInterval);
-            startAutoSlide();
+          // Reset to beginning when reaching cloned items (infinite loop)
+          if (currentIndex >= originalLength) {
+            setTimeout(() => {
+              track.style.transition = 'none';
+              currentIndex = currentIndex - originalLength;
+              updateSlider();
+              setTimeout(() => {
+                track.style.transition = 'transform 0.5s ease';
+              }, 50);
+            }, 500);
           }
-        });
-        dotsContainer.appendChild(dot);
+        }, 4000);
       }
-    }
 
-    // Start from first card - position at left edge
-    currentIndex = 0;
-    setTimeout(() => {
-      if (track && allCards.length > 0) {
-        track.style.transition = 'none';
-        updateSlider();
+      function createInfiniteSlider(doctors) {
+        track = document.getElementById('doctorsSliderTrack');
+        dotsContainer = document.getElementById('doctorsSliderDots');
+        if (!track) return;
+
+        track.innerHTML = '';
+        originalLength = doctors.length;
+
+        // Create original cards
+        doctors.forEach((doctor, idx) => {
+          const card = document.createElement('div');
+          card.className = 'doctor-card';
+          card.style.flex = '0 0 auto';
+          card.style.width = '280px';
+          card.style.maxWidth = '100%';
+
+          if (window.innerWidth <= 1024) card.style.width = '260px';
+          if (window.innerWidth <= 768) card.style.width = '280px';
+
+          card.innerHTML = `
+  ${doctor.isDirector ? '<div class="director-badge">⭐ Medical Director</div>' : ''}
+  <div class="doctor-img-wrap" style="height: 220px;">
+    <img src="${doctor.imgSrc}" alt="${doctor.name}" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(160deg, #F2D9E6, #E8C4D4)';">
+  </div>
+  <div class="doctor-info" style="padding: 16px 18px 20px;">
+    <div class="doctor-top-meta">
+      <span class="doctor-specialty-tag" style="font-size: 0.65rem;">${doctor.specialty}</span>
+      ${doctor.exp ? `<span class="doctor-exp" style="font-size: 0.7rem; background: var(--rose-pale); padding: 2px 8px; border-radius: 20px;">${doctor.exp}</span>` : ''}
+    </div>
+    <div class="doctor-name" style="font-size: 0.95rem; margin-bottom: 4px;">${doctor.name}</div>
+    <div class="doctor-deg" style="font-size: 0.72rem; margin-bottom: 12px;">${doctor.deg}</div>
+    <div class="doctor-card-footer" style="gap: 8px;">
+      <a href="${doctor.profileHref}" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.72rem;">Profile</a>
+      <a href="${doctor.bookHref}" class="btn btn-primary" style="padding: 6px 12px; font-size: 0.72rem;">Book</a>
+    </div>
+  </div>
+`;
+          track.appendChild(card);
+        });
+
+        // Duplicate all cards for infinite loop
+        const originalCards = Array.from(track.querySelectorAll('.doctor-card'));
+        originalCards.forEach(card => {
+          const clone = card.cloneNode(true);
+          track.appendChild(clone);
+        });
+
+        allCards = Array.from(track.querySelectorAll('.doctor-card'));
+
+        // Create dots
+        if (dotsContainer) {
+          dotsContainer.innerHTML = '';
+          for (let i = 0; i < doctors.length; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot-indicator');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+              currentIndex = i;
+              updateSlider();
+              if (autoInterval) {
+                clearInterval(autoInterval);
+                startAutoSlide();
+              }
+            });
+            dotsContainer.appendChild(dot);
+          }
+        }
+
+        // Start from first card - position at left edge
+        currentIndex = 0;
         setTimeout(() => {
-          track.style.transition = 'transform 0.5s ease';
-          startAutoSlide();
+          if (track && allCards.length > 0) {
+            track.style.transition = 'none';
+            updateSlider();
+            setTimeout(() => {
+              track.style.transition = 'transform 0.5s ease';
+              startAutoSlide();
+            }, 100);
+          }
         }, 100);
-      }
-    }, 100);
 
-    // Handle window resize
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        const cards = track.querySelectorAll('.doctor-card');
-        let newWidth = '280px';
-        if (window.innerWidth <= 1024) newWidth = '260px';
-        if (window.innerWidth <= 768) newWidth = '280px';
-        cards.forEach(card => {
-          card.style.width = newWidth;
+        // Handle window resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            const cards = track.querySelectorAll('.doctor-card');
+            let newWidth = '280px';
+            if (window.innerWidth <= 1024) newWidth = '260px';
+            if (window.innerWidth <= 768) newWidth = '280px';
+            cards.forEach(card => {
+              card.style.width = newWidth;
+            });
+            track.style.transition = 'none';
+            updateSlider();
+            setTimeout(() => {
+              track.style.transition = 'transform 0.5s ease';
+            }, 50);
+          }, 250);
         });
-        track.style.transition = 'none';
-        updateSlider();
-        setTimeout(() => {
-          track.style.transition = 'transform 0.5s ease';
-        }, 50);
-      }, 250);
-    });
-  }
+      }
 
-  getAllDoctors().then(doctors => {
-    if (doctors.length > 0) {
-      createInfiniteSlider(doctors);
-    }
-  });
-});
+      getAllDoctors().then(doctors => {
+        if (doctors.length > 0) {
+          createInfiniteSlider(doctors);
+        }
+      });
+    });
 
     // Mobile menu toggle with overlay
     function toggleMenu() {
